@@ -11,7 +11,7 @@ defineProps({
   <div class="py-12 text-center">
     <h1 class="text-3xl uppercase">{{ msg }}</h1>
     <h2 class="italic">
-      #1 Vue Project 2023 - <small>Start 2 Septemeber</small>
+      #1 Vue Project 2023 - <small>Start 2 September</small>
     </h2>
     <nav>
       <ul class="flex justify-center gap-4 mt-10">
