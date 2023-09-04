@@ -1,11 +1,6 @@
 <template>
-        <div class="mb-6">
-            <h2 class="text-2xl mt-6">FORM</h2>
-            <p>Form.</p>
-        </div>
-        
-        <div>
-        <form class="bg-gray-300 p-6 max-w-sm mx-auto" @submit.prevent="onSubmit">
+       <div>
+        <form class="bg-gray-300 p-6 " @submit.prevent="onSubmit">
             <h3>Leave a review</h3>
             <div class="mb-6">
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name:</label>
@@ -17,7 +12,7 @@
             </div>
             <div class="mb-6">
                 <label for="rating" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Rating</label>
-                <select id="rating" v-model="rating" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select id="rating" required v-model="rating" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option>5</option>
                 <option>4</option>
                 <option>3</option>
@@ -35,11 +30,11 @@
                 <div class="pl-4 text-sm font-normal"><strong>Hey {{name}},</strong> your review was successfully submitted.</div>
             </div>
         </form>
-        
     </div>
 </template>
 
 <script setup>
+import SquareItem from './SquareItem.vue';
 
 import { defineEmits } from 'vue';
 import { ref } from 'vue';
@@ -59,6 +54,15 @@ const onSubmit = () => {
   console.log(productReview);
   isSend.value = true;
 };
+
+import { defineProps } from 'vue';
+
+
+const props = defineProps({
+  productName: String,
+  productDescription: String,
+  images: Array,
+});
 
 </script>
 

@@ -3,8 +3,7 @@
   import Message from '../components/customComponents/Message.vue';
   import Input from '../components/customComponents/Input.vue';
   import Gmap from '../components/customComponents/Gmap.vue';
-  import Form from '../components/customComponents/Form.vue';
-  </script>
+  import Card from '../components/customComponents/Card.vue';
 
 <template>
   <div class="bg-gray-200">
