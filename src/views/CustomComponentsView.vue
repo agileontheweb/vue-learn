@@ -3,6 +3,7 @@
   
   import Message from '../components/customComponents/Message.vue';
   import Gmap from '../components/customComponents/Gmap.vue';
+  import Form from '../components/customComponents/Form.vue';
   </script>
 
 <template>
