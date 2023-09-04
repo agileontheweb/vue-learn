@@ -2,6 +2,7 @@
   import Buttons from '../components/customComponents/Buttons.vue';
   
   import Message from '../components/customComponents/Message.vue';
+  import Input from '../components/customComponents/Input.vue';
   import Gmap from '../components/customComponents/Gmap.vue';
   import Form from '../components/customComponents/Form.vue';
   </script>
