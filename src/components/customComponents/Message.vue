@@ -1,6 +1,6 @@
 <template>
     <div class="mb-6">
-        <h2 class="text-2xl mt-6">API: Alert / Message</h2>
+        <h2 class="text-2xl mt-6">Quote API with Alert Style</h2>
         <p>Consume Message "Quotes" from https://jsonplaceholder.typicode.com. Use Axios.</p>
     </div>
 <div>
