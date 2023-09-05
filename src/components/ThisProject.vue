@@ -1,18 +1,96 @@
 <script setup>
+  const currentDate = new Date().toLocaleDateString();
+  const totalHours = "30 hours";
 </script>
 
 <template>
   <div class="border bg-gray-100">
     <div class="max-w-screen-md mx-auto py-8">
-      
-        <h2 class="text-2xl mt-6">Documentation</h2>
-        <p>This is my first Vue Project. I developed it to test how it work and to show this small project
-          at the agency to find a job.
+
+        <h2>First Project in Vue 3 - Started September 2, 2023.</h2>
+        <p>
+          Today {{ currentDate }},  i invested in learning and developing this project in approximately <strong>{{ totalHours }}:</strong>
         </p>
-      
-        <h2 class="text-2xl mt-6">Tools</h2>
-        <p>I installed Vue 3 via node and then added Tailwind as style processor.
-        More instructions are available in <code>README.md</code>.</p>
+          <p>To learn Vue3 i used:
+            <ul>
+              <li>
+                <a href="https://vuejs.org/guide/" target="_blank" rel="noopener">Vuejs</a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/watch?v=YrxBCBibVo0&list=PL4cUxeGkcC9hYYGbV60Vq3IXYNfDk8At1" target="_blank" rel="noopener">Youtube</a>
+              </li>
+              <li>
+                <a href="https://chat.openai.com//" target="_blank" rel="noopener">ChatGPT </a>
+              </li>
+            </ul>
+          </p>
+          <p>
+            I started to read the documentation to get a global idea as it work.
+            After i watch some youtube tutorial to have an global idea on how it work with some example.
+            And the end i created a repository on github and develop my personal project.
+          </p>
+          
+          <p>
+            During the project i used ChatGPT to check sintax error or help me to understand some question i had.
+          </p>
+        
+        <h2>Tools</h2>
+        <p>
+          To create this project i used this tool.
+          
+        </p>
+        <p>
+          <ul>
+            <li>Github</li>
+            <li>Node</li>
+            <li>Tailwind</li>
+            <li>Axios</li>
+            <li>chart.js</li>
+            <li>vue3-carousel</li>
+            <li>vue3-google-map</li>
+          </ul>
+        </p>
+        <h2>Project Goal</h2>
+        <p>In this project i want to learn how to:</p>
+        <p>
+          <ul>
+            <li>
+              Install Vue.
+            </li>
+            <li>
+              Add TailWind.
+            </li>
+            <li>
+              Create Navigation Section (Router)
+            </li>
+            <li>
+              API Call.
+            </li>
+            <li>
+              Corousel
+            </li>
+            <li>
+              Form
+            </li>
+            <li>
+              Autocomplete
+            </li>
+            <li>
+              Google Maps
+            </li>
+            <li>
+              Loading
+            </li>
+            <li>
+              GraphChart
+            </li>
+        </ul>
+          
+        </p>
+        <p>
+          I created a section <RouterLink to="/customComponents">Custom Components</RouterLink>
+          the check that components.
+        </p>
     </div>
   </div>
 </template>
