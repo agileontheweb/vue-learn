@@ -1,7 +1,5 @@
 <template>
     <div>
-        <h2 class="text-2xl mt-6">Button</h2>
-        <p>add + and - to increment somthing</p>
         <div class="mt-3">
         <button @click="state.count++" class="px-3 py-1 border border-gray-500 rounded-md">
           +
