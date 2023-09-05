@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-h2{
-    @apply text-2xl font-extrabold;
+@layer components {
+    nav ul {
+        @apply list-none;
+    }
+    nav a {
+        @apply border-none;
+    }
+
+    h1{
+        @apply text-3xl font-semibold;
+    }
+    h2{
+        @apply text-2xl font-semibold my-3;
+    }
+    p{
+        @apply py-2
+    }
+    ul{
+        @apply list-inside list-disc my-3;
+    }
+    ul li{
+        @apply py-1;
+    }
+    .btn-primary {
+        @apply bg-blue-500 hover:bg-blue-600 transition-all cursor-pointer text-white rounded-md p-3;
+    }
+    a{
+        @apply border-b-2 border-green-400 ;
+    }
+    code{
+        @apply bg-gray-800 text-gray-300 block p-3;
+    }
 }
