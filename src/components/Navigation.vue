@@ -8,6 +8,7 @@ defineProps({
 </script>
 
 <template>
+  
   <div class="py-12 text-center">
     <h1 class="text-3xl uppercase">{{ msg }}</h1>
     <h2 class="italic">
@@ -18,11 +19,12 @@ defineProps({
         <li class="border px-3 text-sm" :class="{ 'border-blue-300 text-blue-300': $route.path === '/' }">
           <RouterLink to="/">This project</RouterLink>
         </li>
-        <li class="border px-3 text-sm" :class="{ 'border-blue-300 text-blue-300': $route.path === '/customComponents' }">
-          <RouterLink to="/customComponents">Custom Components</RouterLink>
+        <li class="border px-3 text-sm" :class="{ 'border-blue-300 text-blue-300': $route.path === '/customComponents/topPage' }">
+          
+          <RouterLink :to="{ name: 'customComponents', params: { section: 'topPage' } }">Custom Components</RouterLink>
         </li>
-        <li class="border px-3 text-sm" :class="{ 'border-blue-300 text-blue-300': $route.path === '/about' }">
-          <RouterLink to="/about">About</RouterLink>
+        <li class="border px-3 text-sm" :class="{ 'border-blue-300 text-blue-300': $route.path === '/about/topPage' }">
+          <RouterLink :to="{ name: 'about', params: { section: 'topPage' } }">About</RouterLink>
         </li>
         <li class="border px-3 text-sm">
           <a href="https://vuejs.org/" target="_blank" rel="noopener">Github</a>

@@ -1,17 +1,27 @@
 <script setup>
   import { ref } from 'vue';
+  import { onMounted } from 'vue';
+  import { useRoute } from 'vue-router';
   import Buttons from '../components/customComponents/Buttons.vue';
   import Message from '../components/customComponents/Message.vue';
   import Input from '../components/customComponents/Input.vue';
   import Gmap from '../components/customComponents/Gmap.vue';
   import Card from '../components/customComponents/Card.vue';
   
+  const route = useRoute();
+
+  onMounted(() => {
+    const fragment = route.params.section;
+    scrollToSection(fragment);
+  });
+const topPage = ref(null);
 const buttonReview = ref(null);
 const buttonSection = ref(null);
 const inputSection = ref(null);
 const apiSection = ref(null);
 
 const sections = {
+  topPage: topPage,
   buttonReview: buttonReview,
   buttonSection: buttonSection,
   inputSection: inputSection,
@@ -30,6 +40,7 @@ const scrollToSection = (sectionId) => {
 <template>
   <div class="bg-gray-100">
     <div class="max-w-screen-md mx-auto py-8">      
+    <section ref="topPage"></section>
         <h1 class="text-3xl mt-6">Custom Components</h1>
         <p>I created some components to use in the project.</p>
         <p> This is a List of Components:</p>
