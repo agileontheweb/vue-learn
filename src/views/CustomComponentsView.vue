@@ -7,6 +7,7 @@
   import Input from '../components/customComponents/Input.vue';
   import Gmap from '../components/customComponents/Gmap.vue';
   import Card from '../components/customComponents/Card.vue';
+  import Product from '../components/customComponents/Product.vue';
   
   const route = useRoute();
 
@@ -35,6 +36,16 @@ const scrollToSection = (sectionId) => {
   }
 };
 
+const message = ref("Products in cart");
+const addToCartHandler = (newMessage,itemQuantity) => {
+  console.log("Evento addToCart Prodotto aggiunto:", newMessage + " " + itemQuantity);
+  message.value=newMessage;
+  console.log("TOTAL:" + itemQuantity)
+  totalItemCart = itemQuantity;
+  showToast.value = true;
+  quantity.value++;
+  console.log(quantity.value)
+};
 </script>
 
 <template>
@@ -149,6 +160,9 @@ const scrollToSection = (sectionId) => {
             if result is less 0.
           </p>
           <Buttons />
+          <Product :title="'Shooes'" :price="79.99" @addToCart="addToCartHandler" :showToast="showToast" />
+          <Product :title="'Tshirt'" :price="39.99" @addToCart="addToCartHandler" :showToast="showToast" />
+          <Product :title="'Pants'" :price="19.99" @addToCart="addToCartHandler" :showToast="showToast" />
         </div>
       </section>
     </div>
