@@ -5,11 +5,13 @@
   import Buttons from '../components/customComponents/Buttons.vue';
   import Message from '../components/customComponents/Message.vue';
   import Input from '../components/customComponents/Input.vue';
-  import Gmap from '../components/customComponents/Gmap.vue';
+  // import Gmap from '../components/customComponents/Gmap.vue';
   import Card from '../components/customComponents/Card.vue';
   import Product from '../components/customComponents/Product.vue';
+  import Cart from '../components/customComponents/Cart.vue';
   import TopAlert from '../components/customComponents/TopAlert.vue'
   import Toast from '../components/customComponents/Toast.vue'
+
   
   const route = useRoute();
 
@@ -17,6 +19,19 @@
     const fragment = route.params.section;
     scrollToSection(fragment);
   });
+
+const imageSrcArrayOne = [
+  { src: "https://picsum.photos/id/237/1024/800" },
+  { src: "https://picsum.photos/id/238/1024/800" },
+  { src: "https://picsum.photos/id/239/1024/800" },
+];
+
+const imageSrcArrayTwo = [
+  { src: "https://picsum.photos/536/354" },
+  { src: "https://picsum.photos/233/356" },
+  { src: "https://picsum.photos/536/354" },
+];
+
 const topPage = ref(null);
 const buttonReview = ref(null);
 const buttonSection = ref(null);
@@ -39,7 +54,12 @@ const scrollToSection = (sectionId) => {
 };
 
 const message = ref("Products in cart");
+
+let totalItemCart = "";
+
 const showToast = ref(false);
+const quantity = ref(0);
+
 const addToCartHandler = (newMessage,itemQuantity) => {
   console.log("Evento addToCart Prodotto aggiunto:", newMessage + " " + itemQuantity);
   message.value=newMessage;
@@ -58,9 +78,11 @@ const closeToast = () => {
 
 <template>
   <div class="bg-gray-100">
-    <div class="max-w-screen-md mx-auto py-8">      
+    
     <section ref="topPage"></section>
+    <div class="container">      
         <h1 class="text-3xl mt-6">Custom Components</h1>
+        
         <p>I created some components to use in the project.</p>
         <p> This is a List of Components:</p>
         <ul>
@@ -71,12 +93,12 @@ const closeToast = () => {
           </li>
           <li @click="scrollToSection('inputSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">AutoComplete + API: Air Quality</span></li>
           <li @click="scrollToSection('buttonSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">Quote Message API:</span></li>
-          <li @click="scrollToSection('apiSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">Buttons increments</span></li>
+          <li @click="scrollToSection('apiSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">Buttons</span></li>
         </ul>
     </div>
     
     <div class="bg-gray-200">
-      <section ref="buttonReview">
+      <section ref="buttonReview" class="container">
         <div class="max-w-screen-md mx-auto py-8">
           <div class="mb-6">
             <h2 class="text-2xl mt-6">Slide Image + Form Review</h2>
@@ -124,7 +146,7 @@ const closeToast = () => {
     
 
     <div class="bg-white">
-      <section ref="inputSection">
+      <section ref="inputSection" class="container">
         <div class="max-w-screen-md mx-auto py-8">      
           <h2>AutoComplete + API: Air Quality</h2>
           <p>
@@ -150,7 +172,7 @@ const closeToast = () => {
     </div>
 
     <div class="bg-gray-200">
-      <section ref="apiSection">
+      <section ref="apiSection" class="container">
         <div class="max-w-screen-md mx-auto py-8">      
           <h2 class="text-2xl mt-6">Quote API</h2>
           <p>Show random Quote via Api.  from https://api.api-ninjas.com/v1/quotes . Use Axios.</p>
@@ -161,18 +183,23 @@ const closeToast = () => {
     </div>
 
     <div class="bg-white">
-      <section ref="buttonSection">
+      <section ref="buttonSection" class="container">
         <div class="max-w-screen-md mx-auto py-8">
-          <h2 class="text-2xl mt-6">Button Increments</h2>
+          <h2 class="text-2xl mt-6">Button </h2>
           <p>Add plus and minus button and increment/decrement on clcik. Hide minus button 
             if result is less 0.
           </p>
+          
           <TopAlert :quantitymyprop="message" :quantity="quantity" />
           <Buttons />
           <Product :title="'Shooes'" :price="79.99" @addToCart="addToCartHandler" :showToast="showToast" />
           <Product :title="'Tshirt'" :price="39.99" @addToCart="addToCartHandler" :showToast="showToast" />
           <Product :title="'Pants'" :price="19.99" @addToCart="addToCartHandler" :showToast="showToast" />
           <Toast :myprop="message" :showToast="showToast" @closeToast="closeToast" />
+          <h2 class="text-2xl mt-6">Cart</h2>
+          <p>Product added
+          </p>
+          <Cart />
         </div>
       </section>
     </div>
