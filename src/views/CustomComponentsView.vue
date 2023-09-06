@@ -8,6 +8,7 @@
   import Gmap from '../components/customComponents/Gmap.vue';
   import Card from '../components/customComponents/Card.vue';
   import Product from '../components/customComponents/Product.vue';
+  import Toast from '../components/customComponents/Toast.vue'
   
   const route = useRoute();
 
@@ -37,6 +38,7 @@ const scrollToSection = (sectionId) => {
 };
 
 const message = ref("Products in cart");
+const showToast = ref(false);
 const addToCartHandler = (newMessage,itemQuantity) => {
   console.log("Evento addToCart Prodotto aggiunto:", newMessage + " " + itemQuantity);
   message.value=newMessage;
@@ -46,6 +48,11 @@ const addToCartHandler = (newMessage,itemQuantity) => {
   quantity.value++;
   console.log(quantity.value)
 };
+
+const closeToast = () => {
+  showToast.value = false;
+};
+
 </script>
 
 <template>
@@ -163,6 +170,7 @@ const addToCartHandler = (newMessage,itemQuantity) => {
           <Product :title="'Shooes'" :price="79.99" @addToCart="addToCartHandler" :showToast="showToast" />
           <Product :title="'Tshirt'" :price="39.99" @addToCart="addToCartHandler" :showToast="showToast" />
           <Product :title="'Pants'" :price="19.99" @addToCart="addToCartHandler" :showToast="showToast" />
+          <Toast :myprop="message" :showToast="showToast" @closeToast="closeToast" />
         </div>
       </section>
     </div>
