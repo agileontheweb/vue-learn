@@ -8,6 +8,7 @@
   import Gmap from '../components/customComponents/Gmap.vue';
   import Card from '../components/customComponents/Card.vue';
   import Product from '../components/customComponents/Product.vue';
+  import TopAlert from '../components/customComponents/TopAlert.vue'
   import Toast from '../components/customComponents/Toast.vue'
   
   const route = useRoute();
@@ -166,6 +167,7 @@ const closeToast = () => {
           <p>Add plus and minus button and increment/decrement on clcik. Hide minus button 
             if result is less 0.
           </p>
+          <TopAlert :quantitymyprop="message" :quantity="quantity" />
           <Buttons />
           <Product :title="'Shooes'" :price="79.99" @addToCart="addToCartHandler" :showToast="showToast" />
           <Product :title="'Tshirt'" :price="39.99" @addToCart="addToCartHandler" :showToast="showToast" />
