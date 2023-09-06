@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 @layer components {
+    .container{
+        @apply max-w-screen-md mx-auto py-6;   
+    }
     nav ul {
         @apply list-none;
     }
+    
     nav a {
         @apply border-none;
     }
