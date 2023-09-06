@@ -1,14 +1,21 @@
 <script setup>
   const currentDate = new Date().toLocaleDateString();
   const totalHours = "30 hours";
+  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 </script>
 
 <template>
   <div class="border bg-gray-100">
     <div class="max-w-screen-md mx-auto py-8">
 
-        <h2>First Project in Vue 3 - Started September 2, 2023.</h2>
-        <p>
+  <div class="border bg-gray-100">
+    <div class="container">
+        <h1>First Project in 
+          <font-awesome-icon :icon="['fab', 'vuejs']" class="text-green-600" /> Vue 3.</h1>
+          <p>
+            Started September 2, 2023
+          </p>
+          <p>
           Today {{ currentDate }},  i invested in learning and developing this project in approximately <strong>{{ totalHours }}:</strong>
         </p>
           <p>To learn Vue3 i used:
@@ -83,6 +90,9 @@
             </li>
             <li>
               GraphChart
+            </li>
+            <li>
+              FontAwesome
             </li>
         </ul>
           
