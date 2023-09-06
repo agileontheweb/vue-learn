@@ -1,12 +1,13 @@
 <script setup>
   const currentDate = new Date().toLocaleDateString();
   const totalHours = "30 hours";
+  import { RouterLink } from 'vue-router';
+  import { ref, defineProps } from 'vue';
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 </script>
 
 <template>
-  <div class="border bg-gray-100">
-    <div class="max-w-screen-md mx-auto py-8">
+      
 
   <div class="border bg-gray-100">
     <div class="container">
@@ -95,10 +96,12 @@
               FontAwesome
             </li>
         </ul>
-          
+        
         </p>
         <p>
-          I created a section <RouterLink to="/customComponents">Custom Components</RouterLink>
+          I created a section
+          <RouterLink :to="{ name: 'customComponents', params: { section: 'topPage' } }">Vai alla biografia - Sezione 1</RouterLink>
+          <!-- <RouterLink to="/customComponents#topPage">Custom Components</RouterLink> -->
           the check that components.
         </p>
     </div>
