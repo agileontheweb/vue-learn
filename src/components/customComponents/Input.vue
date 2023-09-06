@@ -72,15 +72,9 @@ const getAirQulity = (getPosition) => {
     },
   })
   .then((response) => {
-    console.log(response.data);
-    console.log("CO: " + response.data.CO.concentration);
-    CO.value = response.data.CO.concentration;
-    console.log("NO2 : " + response.data.NO2.concentration);
-    NO2.value = response.data.NO2.concentration;
-    console.log("O3 : " + response.data.O3.concentration);
-    O3.value = response.data.O3.concentration;
-    console.log("PM10 : " + response.data.PM10.concentration);
-    PM10.value = response.data.PM10.concentration;
+    isLoading.value = true;   
+    
+
     const chartData = [response.data.CO.concentration, response.data.NO2.concentration, response.data.O3.concentration, response.data.PM10.concentration];
     chartDataFromAPI.value = chartData;
     message.value = '';  
@@ -111,7 +105,7 @@ const getAirQulity = (getPosition) => {
             
             <BarChart :chartData="chartDataFromAPI" />
 
-            <div class="grid  grid-cols-4 gap-3 text-center py-3">
+            <div v-if="chartDataFromAPI" class="grid  grid-cols-4 gap-3 text-center py-3">
                 <div class="border p-3 text-left bg-gray-100">
                     <h3 class="text-2xl my-2"> CO: {{ CO }}</h3>
                     <p><small>Il "CO" è l'abbreviazione per il monossido di carbonio, che è un inquinante atmosferico comune. Il monossido di carbonio (CO) è un gas incolore, inodore e insapore che può essere dannoso per la salute umana se presente in concentrazioni elevate nell'aria.</small></p>
