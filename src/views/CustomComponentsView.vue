@@ -203,9 +203,9 @@ const closeToast = () => {
             </p>
             <Buttons :quantity="1" :showButtons="true"/>
           </div>
-          
-          <TopAlert :quantitymyprop="message" :quantity="quantity" />
-          <TopAlert :quantity="totalItemCart" @cartUpdated="updateQuantity"  />
+
+          <TopAlert :totalItemCart="totalItemCart" />
+
           
           <div class="border-b-2 py-6">
             <h3>Cart Buttons: </h3>
