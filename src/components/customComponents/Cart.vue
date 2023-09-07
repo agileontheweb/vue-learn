@@ -1,5 +1,5 @@
 <template>
-  <div class="border">        
+  <div>        
     <div v-if="cartItems.length === 0">Il carrello è vuoto.</div>
     <div v-else>
       <p>
@@ -13,8 +13,8 @@
           <p>Price: {{ item.price }}</p>
           <p>
             
-          Quantity: 
-          <span>{{ item.quantity }}</span>
+          Quantity:  <span>{{ item.quantity }}</span>
+          
           <Buttons
             :quantity="item.quantity"
             :showButtons="item.showButtons"
@@ -25,7 +25,9 @@
           <font-awesome-icon :icon="['fas', 'trash']" />
         </button>
       </div>
-      <strong>Total Price: ${{ totalPrice.toFixed(2) }}</strong>
+      <p class="px-6 py-3">
+        <strong>Total Price: $ {{ totalPrice.toFixed(2) }}</strong>
+      </p>
     </div>
     </div>
   </template>
@@ -34,10 +36,10 @@
   import { ref, watch, defineProps, defineEmits } from 'vue';
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
   import Buttons from './Buttons.vue';
-
+  
   const props = defineProps({
     quantity: Number,
-    cartItems: Array
+    cartItems: Array,
   });
   
   const totalItemCart = ref();
@@ -48,17 +50,19 @@
     totalPrice.value = newCartItems.reduce((total, item) => {
       return total + item.price * item.quantity;
     }, 0);
-
     totalItemCart.value = newCartItems.reduce((total, item) => total + item.quantity, 0);
   });
 
   const removeFromCart = (index) => {
     props.cartItems.splice(index, 1);    
-    emits('cartUpdated', props.cartItems.length);
+    const updatedQuantity = props.cartItems.reduce((total, item) => total + item.quantity, 0);
+    emits('updateTotalItemCart', updatedQuantity);
   };
-  
+
   const updateQuantity = (index, newQuantity) => {
     props.cartItems[index].quantity = newQuantity;
+    const updatedQuantity = props.cartItems.reduce((total, item) => total + item.quantity, 0);
+    emits('updateTotalItemCart', updatedQuantity);
   };
 
   </script>

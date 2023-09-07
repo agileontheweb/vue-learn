@@ -60,7 +60,7 @@ const message = ref("Add Products in cart");
 const showToast = ref(false);
 const quantity = ref(0);
 const cartItems = ref([]);
-const totalItemCart = ref();
+const totalItemCart = ref(0);
 
 const addToCartHandler = (item) => {
   const existingItem = cartItems.value.find((cartItem) => cartItem.title === item.title);
@@ -76,13 +76,14 @@ const addToCartHandler = (item) => {
   totalItemCart.value = cartItems.value.reduce((total, item) => total + item.quantity, 0);
 };
 
-const updateQuantity = (newQuantity) => {
-  totalItemCart.value = cartItems.value.reduce((total, item) => total + item.quantity, 0);
-};
-
 const closeToast = () => {
   showToast.value = false;
 };
+
+const updateTotalItemCart = (updatedQuantity) => {
+  totalItemCart.value = updatedQuantity;
+};
+
 
 </script>
 
@@ -221,7 +222,12 @@ const closeToast = () => {
             <h3>Cart Section: </h3>
             <p>Showed products to with Cart Buttons. Add remove button. Update total procuts cart
             </p>
-            <Cart :cartItems="cartItems" @cartUpdated="updateQuantity" />
+            <!-- <Cart :cartItems="cartItems" /> -->
+            <!-- <Cart :cartItems="cartItems" :totalItemCart="totalItemCart" /> -->
+            <Cart :cartItems="cartItems" :totalItemCart="totalItemCart" @update-total-item-cart="updateTotalItemCart" />
+
+            <!-- <Cart :cartItems="cartItems" :updatedQuantity="updatedQuantity" /> -->
+
           </div>
         
         </div>
