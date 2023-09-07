@@ -59,16 +59,23 @@ let totalItemCart = "";
 
 const showToast = ref(false);
 const quantity = ref(0);
+const cartItems = ref([]);
 const totalItemCart = ref();
 
-const addToCartHandler = (newMessage,itemQuantity) => {
-  console.log("Evento addToCart Prodotto aggiunto:", newMessage + " " + itemQuantity);
-  message.value=newMessage;
-  console.log("TOTAL:" + itemQuantity)
-  totalItemCart = itemQuantity;
+const addToCartHandler = (item) => {
+  const existingItem = cartItems.value.find((cartItem) => cartItem.title === item.title);
+  
+  if (existingItem) {
+    existingItem.quantity += 1;
+    
+  } else {
+    cartItems.value.push({ ...item, quantity: 1 });
+  }
+  
   showToast.value = true;
-  quantity.value++;
-  console.log(quantity.value)
+  totalItemCart.value = cartItems.value.reduce((total, item) => total + item.quantity, 0);
+};
+
 const updateQuantity = (newQuantity) => {
   totalItemCart.value = cartItems.value.reduce((total, item) => total + item.quantity, 0);
 };
@@ -198,16 +205,15 @@ const closeToast = () => {
           </div>
           
           <TopAlert :quantitymyprop="message" :quantity="quantity" />
-          <Buttons />
-          <Product :title="'Shooes'" :price="79.99" @addToCart="addToCartHandler" :showToast="showToast" />
-          <Product :title="'Tshirt'" :price="39.99" @addToCart="addToCartHandler" :showToast="showToast" />
-          <Product :title="'Pants'" :price="19.99" @addToCart="addToCartHandler" :showToast="showToast" />
-          <Toast :myprop="message" :showToast="showToast" @closeToast="closeToast" />
-          <h2 class="text-2xl mt-6">Cart</h2>
-          <p>Product added
-          </p>
-          <Cart />
           <TopAlert :quantity="totalItemCart" @cartUpdated="updateQuantity"  />
+          
+          <div class="border-b-2 py-6">
+            <h3>Cart Buttons: </h3>
+            <p>Add product + Show Toast + Show Alert
+            </p>
+            <Product :title="'Shooes'" :price="79.99" @addToCart="addToCartHandler" :showToast="showToast" />
+            <Product :title="'Tshirt'" :price="39.99" @addToCart="addToCartHandler" :showToast="showToast" />
+            <Product :title="'Pants'" :price="19.99" @addToCart="addToCartHandler" :showToast="showToast" />
         </div>
       </section>
     </div>
