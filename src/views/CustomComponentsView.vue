@@ -186,9 +186,13 @@ const closeToast = () => {
       <section ref="buttonSection" class="container">
         <div class="max-w-screen-md mx-auto py-8">
           <h2 class="text-2xl mt-6">Button </h2>
-          <p>Add plus and minus button and increment/decrement on clcik. Hide minus button 
-            if result is less 0.
-          </p>
+          <div class="border-b-2 py-6">
+            <h3>Increment/Decrement</h3>
+            <p>Add plus and minus button and increment/decrement on clcik.
+              Hide minus button  if result is less 0.
+            </p>
+            <Buttons :quantity="1" :showButtons="true"/>
+          </div>
           
           <TopAlert :quantitymyprop="message" :quantity="quantity" />
           <Buttons />
