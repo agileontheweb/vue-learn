@@ -22,6 +22,7 @@
 <script setup>
     import { ref } from 'vue';
     import axios from 'axios'
+    import { NINJA_API_KEY } from '../../apikey';
     let isOpen = ref(true);
     let message = ref('');
     let author= ref('');
@@ -40,7 +41,7 @@
             category: category,
             },
             headers: {
-            'X-Api-Key': 'B3c3dxfR39RYSoRrudMB3w==TAV6QtCyg9hU9gyi',
+            'X-Api-Key': NINJA_API_KEY,
             },
         })
         .then((response) => {

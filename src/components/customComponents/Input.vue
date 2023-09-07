@@ -1,6 +1,8 @@
 <script setup>
 import BarChart from './BarChart.vue';
 import Loading from './Loading.vue';
+import { NINJA_API_KEY } from '../../apikey';
+
 import {ref} from 'vue'
 import axios from 'axios';
 import { computed, onMounted } from 'vue';
@@ -68,7 +70,7 @@ const getAirQulity = (getPosition) => {
       city: city,
     },
     headers: {
-        'X-Api-Key': 'B3c3dxfR39RYSoRrudMB3w==TAV6QtCyg9hU9gyi',
+        'X-Api-Key': NINJA_API_KEY,
     },
   })
   .then((response) => {
