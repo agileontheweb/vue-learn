@@ -36,14 +36,13 @@ const topPage = ref(null);
 const buttonReview = ref(null);
 const buttonSection = ref(null);
 const inputSection = ref(null);
-const apiSection = ref(null);
+const quoteSection = ref(null);
 
 const sections = {
   topPage: topPage,
   buttonReview: buttonReview,
   buttonSection: buttonSection,
   inputSection: inputSection,
-  apiSection: apiSection,
 };
 
 const scrollToSection = (sectionId) => {
@@ -103,8 +102,8 @@ const closeToast = () => {
             </span>
           </li>
           <li @click="scrollToSection('inputSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">AutoComplete + API: Air Quality</span></li>
-          <li @click="scrollToSection('buttonSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">Quote Message API:</span></li>
-          <li @click="scrollToSection('apiSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">Buttons</span></li>
+          <li @click="scrollToSection('quoteSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">Quote Message API:</span></li>
+          <li @click="scrollToSection('quoteSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">Buttons</span></li>
         </ul>
     </div>
     
