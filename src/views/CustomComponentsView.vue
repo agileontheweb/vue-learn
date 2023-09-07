@@ -57,6 +57,7 @@ const message = ref("Products in cart");
 
 let totalItemCart = "";
 
+const message = ref("Add Products in cart");
 const showToast = ref(false);
 const quantity = ref(0);
 const cartItems = ref([]);
@@ -214,6 +215,9 @@ const closeToast = () => {
             <Product :title="'Shooes'" :price="79.99" @addToCart="addToCartHandler" :showToast="showToast" />
             <Product :title="'Tshirt'" :price="39.99" @addToCart="addToCartHandler" :showToast="showToast" />
             <Product :title="'Pants'" :price="19.99" @addToCart="addToCartHandler" :showToast="showToast" />
+            <Toast :myprop="message" :showToast="showToast" @closeToast="closeToast" />
+          </div>
+
           <div class="py-6">
             <h3>Cart Section: </h3>
             <p>Showed products to with Cart Buttons. Add remove button. Update total procuts cart

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="fixed top-0 z-20">
         <div v-if="showToast" class="flex items-center bg-green-500 border-l-4 border-green-700 py-2 px-3 shadow-md mb-2">
         <!-- icons -->
        <div class="text-green-500 rounded-full bg-white mr-3">
@@ -9,7 +9,7 @@
        </div>
        <!-- message -->
        <div class="text-white max-w-xs ">
-         {{ myprop }} Si chiude in 3 secondi:
+         {{ myprop }} 
        </div>
      </div>
     </div>
@@ -17,21 +17,21 @@
 
 <script setup>
     
-import { ref, watch, defineProps, defineEmits } from 'vue';
+import { ref, watchEffect, defineProps, defineEmits } from 'vue';
 
 const props = defineProps({
   myprop: String,
-  showToast: Boolean, // Aggiungi questa prop
+  showToast: Boolean,
 });
 
 const emits = defineEmits();
 
-watch(() => {
+watchEffect(() => {
   if (props.showToast) {
     setTimeout(() => {
         console.log("emittss close")
         emits('closeToast');
-    }, 3000); 
+    }, 700); 
   }
 });
 
