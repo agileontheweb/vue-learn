@@ -1,10 +1,10 @@
 <template>
     
-    <div class="fixed top-0 left-0 right-0 z-10 bg-gray-600">
+    <div v-if="quantity" class="fixed top-0 left-0 right-0 z-10 bg-gray-600">
         <div class="container py-3">            
             <div class="flex justify-end text-white">
-                <font-awesome-icon :icon="['fas', 'cart-shopping']" />
-                {{ quantity }}
+                <font-awesome-icon class="mt-1" :icon="['fas', 'cart-shopping']" />
+                <span class="px-3">{{ quantity }}</span>
             </div> 
             
         </div>
@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { ref, defineProps } from 'vue';
+import {  defineProps } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const props = defineProps({

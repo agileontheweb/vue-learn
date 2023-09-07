@@ -59,6 +59,7 @@ let totalItemCart = "";
 
 const showToast = ref(false);
 const quantity = ref(0);
+const totalItemCart = ref();
 
 const addToCartHandler = (newMessage,itemQuantity) => {
   console.log("Evento addToCart Prodotto aggiunto:", newMessage + " " + itemQuantity);
@@ -68,6 +69,8 @@ const addToCartHandler = (newMessage,itemQuantity) => {
   showToast.value = true;
   quantity.value++;
   console.log(quantity.value)
+const updateQuantity = (newQuantity) => {
+  totalItemCart.value = cartItems.value.reduce((total, item) => total + item.quantity, 0);
 };
 
 const closeToast = () => {
@@ -204,6 +207,7 @@ const closeToast = () => {
           <p>Product added
           </p>
           <Cart />
+          <TopAlert :quantity="totalItemCart" @cartUpdated="updateQuantity"  />
         </div>
       </section>
     </div>
