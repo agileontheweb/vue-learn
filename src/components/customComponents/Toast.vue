@@ -29,7 +29,6 @@ const emits = defineEmits();
 watchEffect(() => {
   if (props.showToast) {
     setTimeout(() => {
-        console.log("emittss close")
         emits('closeToast');
     }, 700); 
   }

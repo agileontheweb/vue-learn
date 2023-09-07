@@ -43,6 +43,7 @@ const sections = {
   buttonReview: buttonReview,
   buttonSection: buttonSection,
   inputSection: inputSection,
+  quoteSection: quoteSection,
 };
 
 const scrollToSection = (sectionId) => {
@@ -52,12 +53,9 @@ const scrollToSection = (sectionId) => {
   }
 };
 
-const message = ref("Products in cart");
-
-let totalItemCart = "";
-
 const message = ref("Add Products in cart");
 const showToast = ref(false);
+
 const quantity = ref(0);
 const cartItems = ref([]);
 const totalItemCart = ref(0);
@@ -89,11 +87,9 @@ const updateTotalItemCart = (updatedQuantity) => {
 
 <template>
   <div class="bg-gray-100">
-    
     <section ref="topPage"></section>
     <div class="container">      
         <h1 class="text-3xl mt-6">Custom Components</h1>
-        
         <p>I created some components to use in the project.</p>
         <p> This is a List of Components:</p>
         <ul>
@@ -147,7 +143,6 @@ const updateTotalItemCart = (updatedQuantity) => {
               The Form instead, after complete and click submit show a message
               with the name input .
             </p>
-
           </div>
           <Card productName="Product 1" productDescription="Description 1 " :images="imageSrcArrayOne"/>
           <Card productName="Product 2" productDescription="Description 2 " :images="imageSrcArrayTwo"/>
@@ -155,7 +150,6 @@ const updateTotalItemCart = (updatedQuantity) => {
       </section>
     </div>
     
-
     <div class="bg-white">
       <section ref="inputSection" class="container">
         <div class="max-w-screen-md mx-auto py-8">      
@@ -183,7 +177,7 @@ const updateTotalItemCart = (updatedQuantity) => {
     </div>
 
     <div class="bg-gray-200">
-      <section ref="apiSection" class="container">
+      <section ref="quoteSection" class="container">
         <div class="max-w-screen-md mx-auto py-8">      
           <h2 class="text-2xl mt-6">Quote API</h2>
           <p>Show random Quote via Api.  from https://api.api-ninjas.com/v1/quotes . Use Axios.</p>
