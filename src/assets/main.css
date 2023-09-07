@@ -20,6 +20,9 @@
     h2{
         @apply text-2xl font-semibold my-3;
     }
+    h3{
+        @apply text-xl font-semibold my-3;
+    }
     p{
         @apply py-2
     }
@@ -31,6 +34,9 @@
     }
     .btn-primary {
         @apply bg-blue-500 hover:bg-blue-600 transition-all cursor-pointer text-white rounded-md p-3;
+    }
+    .btn-remove {
+        @apply bg-red-500 hover:bg-red-600 transition-all cursor-pointer text-white rounded-md p-3;
     }
     a{
         @apply border-b-2 border-green-400 ;
