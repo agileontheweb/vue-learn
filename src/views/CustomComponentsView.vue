@@ -2,6 +2,7 @@
   import { ref } from 'vue';
   import { onMounted } from 'vue';
   import { useRoute } from 'vue-router';
+  import { imageSrcArrayOne, imageSrcArrayTwo } from '../components/customComponents/imageData.js';
   import Buttons from '../components/customComponents/Buttons.vue';
   import Message from '../components/customComponents/Message.vue';
   import Input from '../components/customComponents/Input.vue';
@@ -12,25 +13,24 @@
   import TopAlert from '../components/customComponents/TopAlert.vue'
   import Toast from '../components/customComponents/Toast.vue'
 
-  
   const route = useRoute();
-
+  
   onMounted(() => {
     const fragment = route.params.section;
     scrollToSection(fragment);
   });
 
-const imageSrcArrayOne = [
-  { src: "https://picsum.photos/id/237/1024/800" },
-  { src: "https://picsum.photos/id/238/1024/800" },
-  { src: "https://picsum.photos/id/239/1024/800" },
-];
+// const imageSrcArrayOne = [
+//   { src: "https://picsum.photos/id/237/1024/800" },
+//   { src: "https://picsum.photos/id/238/1024/800" },
+//   { src: "https://picsum.photos/id/239/1024/800" },
+// ];
 
-const imageSrcArrayTwo = [
-  { src: "https://picsum.photos/536/354" },
-  { src: "https://picsum.photos/233/356" },
-  { src: "https://picsum.photos/536/354" },
-];
+// const imageSrcArrayTwo = [
+//   { src: "https://picsum.photos/536/354" },
+//   { src: "https://picsum.photos/233/356" },
+//   { src: "https://picsum.photos/536/354" },
+// ];
 
 const topPage = ref(null);
 const buttonReview = ref(null);
