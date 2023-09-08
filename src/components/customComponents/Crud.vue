@@ -35,6 +35,7 @@
   <script setup>
   import { ref, onMounted } from 'vue';
   import { getDatabase, ref as dbRef, get, remove } from 'firebase/database';
+  import { getDatabase, ref as dbRef, get, remove, push } from 'firebase/database';
   import { firestore } from '../../firebase'; // Importa "firestore" da firebase.js
   
   
@@ -71,6 +72,28 @@ const deleteTeacher = async (teacherId) => {
 
 const editTeacher = (teacher) => {
 };
-const addTeacher = () => {
+
+const showAddTeacherForm = ref(false);
+const newTeacherName = ref('');
+
+const saveTeacher = async () => {
+  try {
+    const newTeacherData = {
+      name: newTeacherName.value,
+    };
+    const teachersRef = dbRef(database, 'Teachers');
+    await push(teachersRef, newTeacherData);
+    const newTeacherKey = `id${teachers.value.length + 1}`;
+    teachers.value.push({
+      id: newTeacherKey,
+      ...newTeacherData,
+    });
+    showAddTeacherForm.value = false;
+    newTeacherName.value = '';
+  } catch (error) {
+    console.error('Error to add Teacher:', error);
+  }
 };
+
   </script>
+  
