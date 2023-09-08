@@ -1,23 +1,25 @@
 <template>
     <div>
-      <h1>Teacher List</h1>
-      <button  class="btn-primary" @click="addTeacher">Aggiungi Insegnante</button>
-
-      <ul>
-      <li v-for="(teacher, key) in teachers" :key="key">
-        <div class="flex">
-            <div>
-                <p>ID: {{ key }}</p>
-                <p>{{ teacher.name }}</p>
-            </div>
-            <div>
-                <button class="mx-3 btn-primary" @click="editTeacher(teacher)">Modifica</button>
-                <button class="mx-3 btn-remove" @click="deleteTeacher(key)">Rimuovi</button>
-            </div>
-        </div>
-      </li>
-    </ul>
-
+       <form v-if="showAddTeacherForm" class="border flex" @submit.prevent="saveTeacher">
+          <input v-model="newTeacherName" placeholder="Add teacher name" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+          <button type="submit" class="mx-3 btn-primary">Save</button>
+        </form>
+        <ul class="list-none">
+        <li v-for="(teacher, key) in teachers" :key="key">
+          <div class="flex p-6 bg-white">
+              <div>
+                  <p>KEY: {{ key }}</p>
+                  <p>ID: {{ teacher.id }}</p>
+                  <p>NAME: {{ teacher.name }}</p>
+              </div>
+              <div>
+                  <button class="mx-3 btn-primary" @click="editTeacher(teacher)">Modifica</button>
+                  <button class="mx-3 btn-remove" @click="deleteTeacher(teacher.id)">Rimuovi</button>
+              </div>
+          </div>
+        </li>
+      </ul>
+      
     </div>
   </template>
   
