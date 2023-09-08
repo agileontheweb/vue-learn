@@ -48,20 +48,18 @@
   }
 });
 
-const deleteTeacher = async (teacherKey) => {
+const deleteTeacher = async (teacherId) => {
   try {
-    const teacherId = 'id' + teacherKey;
     const teachersRef = dbRef(database, 'Teachers/' + teacherId);
     await remove(teachersRef);
-    
-    const index = teachers.value.findIndex((teacher) => teacher.id === teacherId);
-    if (index !== -1) {
-      teachers.value.splice(index, 1);
-    }
+    const updatedTeachers = teachers.value.filter((teacher) => teacher.id !== teacherId);
+    teachers.value = updatedTeachers;
   } catch (error) {
-    console.error('Errore nella rimozione dell\'insegnante:', error);
+    console.error('Error to remove teacher:', error);
   }
 };
+
+
 const editTeacher = (teacher) => {
 };
 const addTeacher = () => {
