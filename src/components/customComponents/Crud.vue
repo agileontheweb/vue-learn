@@ -47,6 +47,18 @@
 });
 
 const deleteTeacher = async (teacherKey) => {
+  try {
+    const teacherId = 'id' + teacherKey;
+    const teachersRef = dbRef(database, 'Teachers/' + teacherId);
+    await remove(teachersRef);
+    
+    const index = teachers.value.findIndex((teacher) => teacher.id === teacherId);
+    if (index !== -1) {
+      teachers.value.splice(index, 1);
+    }
+  } catch (error) {
+    console.error('Errore nella rimozione dell\'insegnante:', error);
+  }
 };
 const editTeacher = (teacher) => {
 };
