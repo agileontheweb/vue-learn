@@ -38,6 +38,8 @@ const buttonReview = ref(null);
 const buttonSection = ref(null);
 const inputSection = ref(null);
 const quoteSection = ref(null);
+const crudSection = ref(null);
+
 
 const sections = {
   topPage: topPage,
@@ -45,6 +47,7 @@ const sections = {
   buttonSection: buttonSection,
   inputSection: inputSection,
   quoteSection: quoteSection,
+  crudSection: crudSection,
 };
 
 const scrollToSection = (sectionId) => {
@@ -101,7 +104,8 @@ const updateTotalItemCart = (updatedQuantity) => {
           </li>
           <li @click="scrollToSection('inputSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">AutoComplete + API: Air Quality</span></li>
           <li @click="scrollToSection('quoteSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">Quote Message API:</span></li>
-          <li @click="scrollToSection('quoteSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">Buttons</span></li>
+          <li @click="scrollToSection('quoteSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">Buttons Cart</span></li>
+          <li @click="scrollToSection('crudSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">Crud</span></li>
         </ul>
     </div>
     
@@ -228,10 +232,11 @@ const updateTotalItemCart = (updatedQuantity) => {
         </div>
       </section>
 
-      <div class="bg-white">
+      <div class="bg-gray-200">
         <section ref="crudSection" class="container">
           <div class="max-w-screen-md mx-auto py-8">
-            <h2 class="text-2xl mt-6">Crud FireBase </h2>
+            <h2 class="mt-6">CRUD </h2>
+            <p>Add, Modify, Remove Item. Use CRUD and FIREBASE</p>
               <Crud />
           </div>
         </section>
