@@ -21,18 +21,6 @@
     scrollToSection(fragment);
   });
 
-// const imageSrcArrayOne = [
-//   { src: "https://picsum.photos/id/237/1024/800" },
-//   { src: "https://picsum.photos/id/238/1024/800" },
-//   { src: "https://picsum.photos/id/239/1024/800" },
-// ];
-
-// const imageSrcArrayTwo = [
-//   { src: "https://picsum.photos/536/354" },
-//   { src: "https://picsum.photos/233/356" },
-//   { src: "https://picsum.photos/536/354" },
-// ];
-
 const topPage = ref(null);
 const buttonReview = ref(null);
 const buttonSection = ref(null);
@@ -113,7 +101,7 @@ const updateTotalItemCart = (updatedQuantity) => {
       <section ref="buttonReview" class="container">
         <div class="max-w-screen-md mx-auto py-8">
           <div class="mb-6">
-            <h2 class="text-2xl mt-6">Slide Image + Form Review</h2>
+            <h2>Slide Image + Form Review</h2>
             <p>
               In this components i can pass some params like title, description
               and array images.
@@ -184,7 +172,7 @@ const updateTotalItemCart = (updatedQuantity) => {
     <div class="bg-gray-200">
       <section ref="quoteSection" class="container">
         <div class="max-w-screen-md mx-auto py-8">      
-          <h2 class="text-2xl mt-6">Quote API</h2>
+          <h2>Quote API</h2>
           <p>Show random Quote via Api.  from https://api.api-ninjas.com/v1/quotes . Use Axios.</p>
           <p>Click button to load a new random quote</p>
           <Message />
@@ -195,7 +183,7 @@ const updateTotalItemCart = (updatedQuantity) => {
     <div class="bg-white">
       <section ref="buttonSection" class="container">
         <div class="max-w-screen-md mx-auto py-8">
-          <h2 class="text-2xl mt-6">Button </h2>
+          <h2>Button </h2>
           <div class="border-b-2 py-6">
             <h3>Increment/Decrement</h3>
             <p>Add plus and minus button and increment/decrement on clcik.

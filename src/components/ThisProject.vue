@@ -1,6 +1,6 @@
 <script setup>
   const currentDate = new Date().toLocaleDateString();
-  const totalHours = "30 hours";
+  const totalHours = "45 hours";
   import { RouterLink } from 'vue-router';
   import { ref, defineProps } from 'vue';
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -94,6 +94,15 @@
             </li>
             <li>
               FontAwesome
+            </li>
+            <li>
+              Buttons: Increment Decrement
+            </li>
+            <li>
+              Cart: Add product and show into section
+            </li>
+            <li>
+              Crud: FireBase
             </li>
         </ul>
         
