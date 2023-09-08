@@ -12,6 +12,7 @@
   import Cart from '../components/customComponents/Cart.vue';
   import TopAlert from '../components/customComponents/TopAlert.vue'
   import Toast from '../components/customComponents/Toast.vue'
+  import Crud from '../components/customComponents/Crud.vue'
 
   const route = useRoute();
   
@@ -226,6 +227,15 @@ const updateTotalItemCart = (updatedQuantity) => {
         
         </div>
       </section>
+
+      <div class="bg-white">
+        <section ref="crudSection" class="container">
+          <div class="max-w-screen-md mx-auto py-8">
+            <h2 class="text-2xl mt-6">Crud FireBase </h2>
+              <Crud />
+          </div>
+        </section>
+      </div>
     </div>
   </div>
   </template>
