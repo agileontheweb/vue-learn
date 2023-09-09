@@ -5,7 +5,7 @@
         <p>{{ productDescription }}</p>
     </div>
     
-    <div class="grid grid-cols-2 gap-2 p-3 bg-white shadow-md">
+    <div class="md:grid grid-cols-2 gap-2 p-3 bg-white shadow-md">
         <SquareItem :images="images"/>
         <Form />
     </div>

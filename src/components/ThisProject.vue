@@ -28,8 +28,12 @@
                 <a href="https://www.youtube.com/watch?v=YrxBCBibVo0&list=PL4cUxeGkcC9hYYGbV60Vq3IXYNfDk8At1" target="_blank" rel="noopener">Youtube</a>
               </li>
               <li>
+                <a href="http://stackoverflow.com/" target="_blank" rel="noopener">Stackoverflow</a>
+              </li>
+              <li>
                 <a href="https://chat.openai.com//" target="_blank" rel="noopener">ChatGPT </a>
               </li>
+              
             </ul>
           </p>
           <p>
@@ -56,6 +60,7 @@
             <li>chart.js</li>
             <li>vue3-carousel</li>
             <li>vue3-google-map</li>
+            <li>Firebase</li>
           </ul>
         </p>
         <h2>Project Goal</h2>
@@ -109,9 +114,8 @@
         </p>
         <p>
           I created a section
-          <RouterLink :to="{ name: 'customComponents', params: { section: 'topPage' } }">Vai alla biografia - Sezione 1</RouterLink>
-          <!-- <RouterLink to="/customComponents#topPage">Custom Components</RouterLink> -->
-          the check that components.
+          <RouterLink :to="{ name: 'customComponents', params: { section: 'topPage' } }">components page</RouterLink>.
+          Check my custom components.
         </p>
     </div>
   </div>

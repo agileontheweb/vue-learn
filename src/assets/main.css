@@ -4,7 +4,7 @@
 
 @layer components {
     .container{
-        @apply max-w-screen-md mx-auto py-6;   
+        @apply max-w-screen-md px-6 mx-auto py-6 border-2 border-red-600;   
     }
     nav ul {
         @apply list-none;

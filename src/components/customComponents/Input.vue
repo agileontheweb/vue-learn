@@ -107,19 +107,19 @@ const getAirQulity = (getPosition) => {
             
             <BarChart :chartData="chartDataFromAPI" />
 
-            <div v-if="chartDataFromAPI" class="grid  grid-cols-4 gap-3 text-center py-3">
-                <div class="border p-3 text-left bg-gray-100">
+            <div v-if="chartDataFromAPI" class="md:grid  grid-cols-4 gap-3 text-center py-3">
+                <div class="border p-3 text-left bg-gray-100 my-3">
                     <h3 class="text-2xl my-2"> CO: {{ CO }}</h3>
                     <p><small>Il "CO" è l'abbreviazione per il monossido di carbonio, che è un inquinante atmosferico comune. Il monossido di carbonio (CO) è un gas incolore, inodore e insapore che può essere dannoso per la salute umana se presente in concentrazioni elevate nell'aria.</small></p>
                 </div>
-                <div class="border p-3 text-left bg-gray-100">
+                <div class="border p-3 text-left bg-gray-100 my-3">
                     <h3 class="text-2xl my-2"> NO2: {{ NO2 }}</h3>
                     <p><small>
                         Il "NO2" è l'abbreviazione per il diossido di azoto, che è un inquinante atmosferico gassoso. Il diossido di azoto (NO2) è uno dei principali ossidi di azoto prodotti durante la combustione di combustibili fossili e può essere dannoso per la salute umana.
                     </small>
                 </p>
                 </div>
-                <div class="border p-3 text-left bg-gray-100">
+                <div class="border p-3 text-left bg-gray-100 my-3">
                     
                     <h3 class="text-2xl my-2 ">O3: {{ O3 }}</h3>
                     <p>
@@ -128,7 +128,7 @@ const getAirQulity = (getPosition) => {
                     </small>
                 </p>
                 </div>
-                <div class="border p-3 text-left bg-gray-100">
+                <div class="border p-3 text-left bg-gray-100 my-3">
                     <h3 class="text-2xl my-2"> PM10: {{ PM10 }}</h3>
                     <p>
                     <small>

@@ -8,12 +8,9 @@ defineProps({
 </script>
 
 <template>
-  
-  <div class="py-12 text-center">
+  <div class="py-12 text-center container">
     <h1 class="text-3xl uppercase">{{ msg }}</h1>
-    <h2 class="italic">
-      First Project in Vue3
-    </h2>
+    
     <nav>
       <ul class="flex justify-center gap-4 mt-10">
         <li class="border px-3 text-sm" :class="{ 'border-blue-300 text-blue-300': $route.path === '/' }">

@@ -8,6 +8,7 @@ import App from './App.vue';
 import { createApp } from 'vue';
 </script>
 
+
 <template>
   <div>
     <div class=" bg-black text-white">
@@ -16,7 +17,7 @@ import { createApp } from 'vue';
     <FontAwesomeConfig />
     <RouterView />
     <footer class="bg-black">
-      <div class="max-w-screen-md mx-auto py-8 text-white">
+      <div class="max-w-screen-md mx-auto py-8 text-white container">
         <p>Alessandro Cuoghi - Example Vue Project 
           <font-awesome-icon :icon="['fab', 'github']" class="mx-1" />
       </p>
