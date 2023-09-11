@@ -95,13 +95,12 @@ const updateTotalItemCart = (updatedQuantity) => {
     <div class="container">      
         <h1 class="text-3xl mt-6">
           {{ t('customComponent.h1') }}
-
         </h1>
         <p>{{ t('customComponent.description') }}</p>
         <p>{{ t('customComponent.listComponents') }}</p>
         <ul>
           <li @click="scrollToSection('buttonReview')">
-            <a href="#">{{ t('customComponent.component_slide_image') }}</a>
+            <a>{{ t('customComponent.component_slide_image') }}</a>
           </li>
           <li @click="scrollToSection('inputSection')">
             <a>{{ t('customComponent.component_autocomplete') }}</a>
@@ -109,7 +108,7 @@ const updateTotalItemCart = (updatedQuantity) => {
           <li @click="scrollToSection('quoteSection')">
             <a>{{ t('customComponent.component_quote_api') }}</a>
           </li>
-          <li @click="scrollToSection('quoteSection')">
+          <li @click="scrollToSection('buttonSection')">
             <a>{{ t('customComponent.component_buttons_cart') }}</a>
           </li>
           <li @click="scrollToSection('crudSection')">
@@ -203,18 +202,7 @@ const updateTotalItemCart = (updatedQuantity) => {
     <div class="bg-white">
       <section ref="buttonSection" class="container">
         <div class="max-w-screen-md mx-auto py-8">
-          <h2>Button </h2>
-          <div class="border-b-2 py-6">
-            <h3>Increment/Decrement</h3>
-            <p>Add plus and minus button and increment/decrement on clcik.
-              Hide minus button  if result is less 0.
-            </p>
-            <Buttons :quantity="1" :showButtons="true"/>
-          </div>
-
           <TopAlert :totalItemCart="totalItemCart" />
-
-          
           <div class="border-b-2 py-6">
             <h3>Cart Buttons: </h3>
             <p>Add product + Show Toast + Show Alert
@@ -229,12 +217,7 @@ const updateTotalItemCart = (updatedQuantity) => {
             <h3>Cart Section: </h3>
             <p>Showed products to with Cart Buttons. Add remove button. Update total procuts cart
             </p>
-            <!-- <Cart :cartItems="cartItems" /> -->
-            <!-- <Cart :cartItems="cartItems" :totalItemCart="totalItemCart" /> -->
             <Cart :cartItems="cartItems" :totalItemCart="totalItemCart" @update-total-item-cart="updateTotalItemCart" />
-
-            <!-- <Cart :cartItems="cartItems" :updatedQuantity="updatedQuantity" /> -->
-
           </div>
         
         </div>
