@@ -1,8 +1,8 @@
 import './assets/main.css'
 
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 import { createI18n } from 'vue-i18n';
 import messagesEn from './locales/en.json';
 import messagesIt from './locales/it.json';
