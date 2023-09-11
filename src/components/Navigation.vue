@@ -26,18 +26,20 @@ const changeLanguage = (newLocale) => {
         <button class="mx-2 hover:text-green-500" @click="changeLanguage('es')">{{ t('ESP') }}</button>
       </div>
       <ul class="flex justify-center gap-4 mt-10">
-        <li class="border px-3 text-sm" :class="{ 'border-blue-300 text-blue-300': $route.path === '/' }">
-          <RouterLink to="/">This project</RouterLink>
+        <li
+            :class="{ 'btn-active': $route.path === '/' }">
+            <RouterLink to="/">{{ t('Nav.project') }}</RouterLink>
         </li>
-        <li class="border px-3 text-sm" :class="{ 'border-blue-300 text-blue-300': $route.path === '/customComponents/topPage' }">
-          
-          <RouterLink :to="{ name: 'customComponents', params: { section: 'topPage' } }">Custom Components</RouterLink>
+        <li
+            :class="{ 'btn-active': $route.path === '/customComponents/topPage' }">  
+            <RouterLink :to="{ name: 'customComponents', params: { section: 'topPage' } }">{{ t('Nav.components') }}</RouterLink>
         </li>
-        <li class="border px-3 text-sm" :class="{ 'border-blue-300 text-blue-300': $route.path === '/about/topPage' }">
-          <RouterLink :to="{ name: 'about', params: { section: 'topPage' } }">About</RouterLink>
+        <li
+            :class="{ 'btn-active': $route.path === '/about/topPage' }">
+            <RouterLink :to="{ name: 'about', params: { section: 'topPage' } }">{{ t('Nav.about') }}</RouterLink>
         </li>
-        <li class="border px-3 text-sm">
-          <a href="https://vuejs.org/" target="_blank" rel="noopener">Github</a>
+        <li>
+          <a href="https://github.com/agileontheweb/vue-learn/" target="_blank" rel="noopener">Github</a>
         </li>
     </ul>
     </nav>
