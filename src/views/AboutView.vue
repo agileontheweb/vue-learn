@@ -1,5 +1,34 @@
+<script setup>
+import { ref } from 'vue';
+import { onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+
+const route = useRoute();
+const topPage = ref(null);
+const sections = {
+  topPage: topPage
+};
+
+onMounted(() => {
+  const fragment = route.params.section;
+  scrollToSection(fragment);
+});
+
+const scrollToSection = (sectionId) => {
+  const sectionElement = sections[sectionId];
+  if (sectionElement.value) {
+    sectionElement.value.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
+</script>
+
+
 <template>
     <div class="border bg-gray-100">
+      <section ref="topPage"></section>
     <div class="container">  
 
         <h1>
