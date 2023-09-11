@@ -4,8 +4,8 @@
   },
   "Nav": {
     "project" : "Projecto",
-    "components" : "Somponentes",
-    "about" : "Sobre de mi"
+    "components" : "Componentes",
+    "about" : "Bio"
   },
     "thisProject": {
       "h1": "Primo progetto",

@@ -14,9 +14,12 @@
     nav ul {
         @apply list-none;
     }
+    nav ul li {
+        @apply border;
+    }
     
     nav a{
-        @apply  border-none px-3 py-2  text-sm hover:border-green-600 hover:text-green-600 hover:border-solid
+        @apply  border-none px-3 py-2  text-sm hover:border-green-600 hover:text-green-600;
     }
     
     footer a {
