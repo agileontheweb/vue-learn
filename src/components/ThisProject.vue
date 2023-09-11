@@ -1,9 +1,17 @@
 <script setup>
-  const currentDate = new Date().toLocaleDateString();
-  const totalHours = "45 hours";
+  const totalHours = "55 hours";
   import { RouterLink } from 'vue-router';
   import { ref, defineProps } from 'vue';
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+  import { useI18n } from 'vue-i18n';
+  import { computed } from 'vue';
+
+  const { t } = useI18n();
+  
+  const currentDate = computed(() => {
+    return new Date().toLocaleDateString();
+  });
+
 </script>
 
 <template>
@@ -11,14 +19,14 @@
 
   <div class="border bg-gray-100">
     <div class="container">
-        <h1>First Project in 
-          <font-awesome-icon :icon="['fab', 'vuejs']" class="text-green-600" /> Vue 3.</h1>
-          <p>
-            Started September 2, 2023
-          </p>
-          <p>
-          Today {{ currentDate }},  i invested in learning and developing this project in approximately <strong>{{ totalHours }}:</strong>
-        </p>
+      <h1>
+        {{ t('thisProject.h1') }}
+         <font-awesome-icon :icon="['fab', 'vuejs']" class="text-green-600" /> 
+         Vue 3.
+      </h1>
+      <p>{{ t('thisProject.startedOn') }} </p>      
+        <p v-html="t('thisProject.today', { currentDate: currentDate, totalHours: totalHours })"></p>
+
           <p>To learn Vue3 i used:
             <ul>
               <li>
@@ -33,13 +41,16 @@
               <li>
                 <a href="https://chat.openai.com//" target="_blank" rel="noopener">ChatGPT </a>
               </li>
-              
             </ul>
           </p>
+          
           <p>
             I started to read the documentation to get a global idea as it work.
             After i watch some youtube tutorial to have an global idea on how it work with some example.
-            And the end i created a repository on github and develop my personal project.
+            And the end i created a 
+            <a href="https://github.com/agileontheweb/vue-learn/" target="_blank" rel="noopener">repository on github</a>
+
+             and develop my personal project.
           </p>
           
           <p>
@@ -47,6 +58,7 @@
           </p>
         
         <h2>Tools</h2>
+        
         <p>
           To create this project i used this tool.
           
@@ -55,11 +67,7 @@
           <ul>
             <li>Github</li>
             <li>Node</li>
-            <li>Tailwind</li>
-            <li>Axios</li>
-            <li>chart.js</li>
-            <li>vue3-carousel</li>
-            <li>vue3-google-map</li>
+            <li>Tailwind</li>          
             <li>Firebase</li>
           </ul>
         </p>
@@ -109,6 +117,13 @@
             <li>
               Crud: FireBase
             </li>
+            <li>
+              vue-i18n
+            </li>
+            <li>
+              Deploy
+            </li>
+            
         </ul>
         
         </p>
