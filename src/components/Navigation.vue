@@ -1,6 +1,9 @@
 <script setup>
+import { defineProps } from 'vue';
 import { useI18n } from 'vue-i18n';
 const { t, locale } = useI18n();
+
+
 defineProps({
   msg: {
     type: String,
@@ -16,9 +19,14 @@ const changeLanguage = (newLocale) => {
 
 <template>
   <div class="py-12 text-center container">
-    <h1 class="text-3xl uppercase">{{ msg }}</h1>
-    
-    <nav>
+    <img src="https://alessandrocuoghi.com/img/foto_io-small.jpg" 
+      alt="Alessandro Cuoghi"
+      class="my-face">
+      <div class="text-3xl uppercase my-6 font-semibold ">
+        {{ t('Custom.brand') }}
+      </div>
+    <font-awesome-icon :icon="['fab', 'vuejs']" class="text-green-600 text-4xl mt-3" />     
+  
     <nav>    
       <div class="inline-block h-10 px-3 justify-center py-2 mt-4 border-green-100/30 border rounded-full ">
         <button class="mx-2 hover:text-green-500" @click="changeLanguage('it')">{{ t('ITA') }}</button>
@@ -43,6 +51,5 @@ const changeLanguage = (newLocale) => {
         </li>
     </ul>
     </nav>
-    
   </div>
 </template>
