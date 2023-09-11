@@ -7,10 +7,16 @@
         </span>
       </div>
       <div class="my-6">
-        <button class="btn-primary" @click="showAddTeacherForm = true">Add Teacher</button>
+        <button class="btn-primary" @click="openAddTeacherForm">Add Teacher</button>
        </div>
        <form v-if="showAddTeacherForm" class="border flex" @submit.prevent="saveTeacher">
-          <input v-model="newTeacherName" placeholder="Add teacher name" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+          <input 
+            ref="inputFieldAdd"
+            v-model="newTeacherName"
+            placeholder="Add teacher name"
+            class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required>
+
           <button type="submit" class="mx-3 btn-primary">Save</button>
         </form>
         <ul class="list-none">
@@ -20,30 +26,69 @@
                   <p>KEY: {{ key }}</p>
                   <p>ID: {{ teacher.id }}</p>
                   <p v-if="!teacher.editing">NAME: {{ teacher.name }}</p>
-                  <input v-model="teacher.updatedName" v-if="teacher.editing" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-
+                  <input 
+                  :ref="`inputFieldEdit-${teacher.id}`"
+                  v-model="teacher.updatedName"
+                  v-if="teacher.editing"
+                  class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
               </div>
               <div>
                   <button class="mx-3 btn-primary" @click="editTeacher(teacher)">Modifica</button>
-                  <button class="mx-3 btn-remove" @click="deleteTeacher(teacher.id)">Rimuovi</button>
                   <button v-if="teacher.editing" class="mx-3 btn-primary" @click="saveEditedTeacher(teacher)">Salva</button>
-
+                  <button class="mx-3 btn-remove" @click="deleteTeacher(teacher.id)">Rimuovi</button>
               </div>
           </div>
         </li>
       </ul>
-      
     </div>
   </template>
   
   <script setup>
-  import { ref, onMounted } from 'vue';
+  import { ref, onMounted, nextTick } from 'vue';
   import { getDatabase, ref as dbRef, get, remove, push, update } from 'firebase/database';
   import { firestore } from '../../firebase'; // Importa "firestore" da firebase.js
   
-  
   const teachers = ref([]);
   const database = getDatabase(firestore);
+
+
+  const inputFieldAdd = ref(null); 
+  const inputFieldEdit = ref(null);
+
+  const openAddTeacherForm = () => {
+    showAddTeacherForm.value = true;
+    focusInputFieldAfterNextTick(inputFieldAdd);
+  };
+
+
+  const inputFieldEditRefs = {};
+
+  const editTeacher = (teacher) => {
+    console.log("modifica")  
+    if (teacher.editing) {
+      teacher.editing = false;
+    } else {
+      teacher.editing = true;
+      teacher.updatedName = teacher.name;
+      
+      nextTick(() => {
+      const inputRef = inputFieldEditRefs[teacher.id];
+      if (inputRef && inputRef.focus) {
+        inputRef.focus();
+      }
+
+      });
+    }
+  };
+
+  const focusInputFieldAfterNextTick = (elementToFocus) => {
+    nextTick(() => {
+      if (elementToFocus && elementToFocus.value) {
+        console.log("autofocus")
+        elementToFocus.value.focus();
+      }
+    });
+  };
 
   onMounted(async () => {
   try {
@@ -51,10 +96,14 @@
     const snapshot = await get(teachersRef);
 
     if (snapshot.exists()) {
-      teachers.value = Object.keys(snapshot.val()).map((id) => ({
-        id,
-        ...snapshot.val()[id],
-      }));
+      teachers.value = Object.keys(snapshot.val()).map((id) => {
+        const teacherData = {
+          id,
+          ...snapshot.val()[id],
+        };
+        inputFieldEditRefs[id] = ref(null);
+        return teacherData;
+      });
     }
   } catch (error) {
     console.error('Errore nel recupero dei dati:', error);
@@ -69,15 +118,6 @@ const deleteTeacher = async (teacherId) => {
     teachers.value = updatedTeachers;
   } catch (error) {
     console.error('Error to remove teacher:', error);
-  }
-};
-
-
-const editTeacher = (teacher) => {
-  if (teacher.editing) {
-    teacher.editing = false;
-  } else {
-    teacher.editing = true;
   }
 };
 
@@ -119,6 +159,8 @@ const saveTeacher = async () => {
     });
     showAddTeacherForm.value = false;
     newTeacherName.value = '';
+    
+
   } catch (error) {
     console.error('Error to add Teacher:', error);
   }

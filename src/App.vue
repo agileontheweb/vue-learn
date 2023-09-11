@@ -2,26 +2,20 @@
 import { ref } from 'vue';
 import { RouterLink, RouterView } from 'vue-router'
 import Navigation from './components/Navigation.vue'
+import Footer from './components/Footer.vue'
 import FontAwesomeConfig from './components/FontAwesomeConfig.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import App from './App.vue';
 import { createApp } from 'vue';
 </script>
 
-
 <template>
   <div>
-    <div class=" bg-black text-white">
-      <Navigation msg="Alessandro Cuoghi"/>
+    <div class="bg-gradient-to-tl from-slate-900 to-slate-700 text-white">
+      <Navigation/>
     </div>
     <FontAwesomeConfig />
     <RouterView />
-    <footer class="bg-black">
-      <div class="max-w-screen-md mx-auto py-8 text-white container">
-        <p>Alessandro Cuoghi - Example Vue Project 
-          <font-awesome-icon :icon="['fab', 'github']" class="mx-1" />
-      </p>
-      </div>
-    </footer>
+    <Footer class="bg-gradient-to-br from-slate-900 to-slate-700 text-white" />
   </div>
 </template>
