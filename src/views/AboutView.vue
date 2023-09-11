@@ -4,6 +4,8 @@ import { onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
+const pageTitle = ref('Biografia');
+const pageDescription = ref('Questa e la pagina della Bio.');
 
 const route = useRoute();
 const topPage = ref(null);
@@ -14,6 +16,11 @@ const sections = {
 onMounted(() => {
   const fragment = route.params.section;
   scrollToSection(fragment);
+  document.title = pageTitle.value;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', pageDescription.value);
+    }
 });
 
 const scrollToSection = (sectionId) => {

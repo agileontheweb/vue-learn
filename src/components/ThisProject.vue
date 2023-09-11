@@ -1,15 +1,27 @@
 <script setup>
   const totalHours = "55 hours";
   import { RouterLink } from 'vue-router';
-  import { ref, defineProps } from 'vue';
+  import { ref, defineProps, onMounted } from 'vue';
   import { useI18n } from 'vue-i18n';
   import { computed } from 'vue';
 
   const { t } = useI18n();
   
+  const pageTitle = ref(t('thisProject.metaTitle'));
+  const pageDescription = ref(t('thisProject.metaDescription'));
+  
   const currentDate = computed(() => {
     return new Date().toLocaleDateString();
   });
+
+  onMounted(() => {
+    document.title = pageTitle.value;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', pageDescription.value);
+    }
+  });
+
 
 </script>
 

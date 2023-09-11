@@ -8,6 +8,8 @@
     "about" : "Bio"
   },
     "thisProject": {
+      "metaTitle": "Titulo pagina",
+      "metaDescription": "Desripcion pagina",
       "h1": "Primo progetto",
       "startedOn": "Iniziato il 2 Settembre, 2023",
       "today": "Oggi { currentDate }, ho investito per impare e sviuppare questo progetto approssimativmente <strong> { totalHours }:</strong>"

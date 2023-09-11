@@ -8,6 +8,8 @@
       "about" : "About"
     },
     "thisProject": {
+      "metaTitle": "Project title",
+      "metaDescription": "Project description",
       "h1": "First Project",
       "startedOn": "Started in September 2, 2023",
       "today": "Today { currentDate },  i invested in learning and developing this project in approximately <strong> { totalHours }:</strong>"

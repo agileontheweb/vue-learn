@@ -15,14 +15,23 @@
   import Crud from '../components/customComponents/Crud.vue'
   
   import { useI18n } from 'vue-i18n';
-  
+  const pageTitle = ref('Componenti');
+  const pageDescription = ref('Questa e la pagina componenti.');
+
   const { t } = useI18n();
   const route = useRoute();
   
   onMounted(() => {
     const fragment = route.params.section;
     scrollToSection(fragment);
+    document.title = pageTitle.value;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', pageDescription.value);
+    }
   });
+
+
 
 const topPage = ref(null);
 const buttonReview = ref(null);
