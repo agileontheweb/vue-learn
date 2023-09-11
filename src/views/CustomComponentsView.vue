@@ -13,7 +13,10 @@
   import TopAlert from '../components/customComponents/TopAlert.vue'
   import Toast from '../components/customComponents/Toast.vue'
   import Crud from '../components/customComponents/Crud.vue'
-
+  
+  import { useI18n } from 'vue-i18n';
+  
+  const { t } = useI18n();
   const route = useRoute();
   
   onMounted(() => {
@@ -81,19 +84,28 @@ const updateTotalItemCart = (updatedQuantity) => {
   <div class="bg-gray-100">
     <section ref="topPage"></section>
     <div class="container">      
-        <h1 class="text-3xl mt-6">Custom Components</h1>
-        <p>I created some components to use in the project.</p>
-        <p> This is a List of Components:</p>
+        <h1 class="text-3xl mt-6">
+          {{ t('customComponent.h1') }}
+
+        </h1>
+        <p>{{ t('customComponent.description') }}</p>
+        <p>{{ t('customComponent.listComponents') }}</p>
         <ul>
           <li @click="scrollToSection('buttonReview')">
-            <span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">
-              Slide Image + Form Review
-            </span>
+            <a href="#">{{ t('customComponent.component_slide_image') }}</a>
           </li>
-          <li @click="scrollToSection('inputSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">AutoComplete + API: Air Quality</span></li>
-          <li @click="scrollToSection('quoteSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">Quote Message API:</span></li>
-          <li @click="scrollToSection('quoteSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">Buttons Cart</span></li>
-          <li @click="scrollToSection('crudSection')"><span class="border-b-2 border-blue-300 cursor-pointer hover:border-blue-600">Crud</span></li>
+          <li @click="scrollToSection('inputSection')">
+            <a>{{ t('customComponent.component_autocomplete') }}</a>
+          </li>
+          <li @click="scrollToSection('quoteSection')">
+            <a>{{ t('customComponent.component_quote_api') }}</a>
+          </li>
+          <li @click="scrollToSection('quoteSection')">
+            <a>{{ t('customComponent.component_buttons_cart') }}</a>
+          </li>
+          <li @click="scrollToSection('crudSection')">
+            <a>{{ t('customComponent.component_crud') }}</a>
+          </li>
         </ul>
     </div>
     
@@ -101,7 +113,7 @@ const updateTotalItemCart = (updatedQuantity) => {
       <section ref="buttonReview" class="container">
         <div class="max-w-screen-md mx-auto py-8">
           <div class="mb-6">
-            <h2>Slide Image + Form Review</h2>
+            <h2>{{ t('customComponent.component_slide_image') }}</h2>
             <p>
               In this components i can pass some params like title, description
               and array images.
@@ -110,9 +122,7 @@ const updateTotalItemCart = (updatedQuantity) => {
               <code>
                 &lt;Card productName="Product 1" productDescription="Description 1 " :images="imageSrcArrayOne"/&gt;
               </code>
-              <code>
-                &lt;Card productName="Product 2" productDescription="Description 2 " :images="imageSrcArrayTwo"/&gt;
-              </code>
+              
             </p>
             <p>
               Inside Card i added two components.
@@ -138,7 +148,6 @@ const updateTotalItemCart = (updatedQuantity) => {
             </p>
           </div>
           <Card productName="Product 1" productDescription="Description 1 " :images="imageSrcArrayOne"/>
-          <Card productName="Product 2" productDescription="Description 2 " :images="imageSrcArrayTwo"/>
         </div>
       </section>
     </div>
@@ -146,14 +155,15 @@ const updateTotalItemCart = (updatedQuantity) => {
     <div class="bg-white">
       <section ref="inputSection" class="container">
         <div class="max-w-screen-md mx-auto py-8">      
-          <h2>AutoComplete + API: Air Quality</h2>
+          <h2>{{ t('customComponent.component_autocomplete') }}</h2>
           <p>
             In this components show the air quality  of the city via API.
             Entering the name of the city does a search for cities using the json file 
-            "https://raw.githubusercontent.com/lmfmaier/cities-json/master/cities500.json"
+            <a href="https://raw.githubusercontent.com/lmfmaier/cities-json/master/cities500.json">cities500.json</a>
           </p>
           <p>
-            After load the city and click one, call the API "https://api.api-ninjas.com/v1/airquality"
+            After load the city and click one, call the API
+            <a href="https://api.api-ninjas.com/v1/airquality">airquality</a>
             and get data.
           </p>
           <p>
@@ -161,7 +171,8 @@ const updateTotalItemCart = (updatedQuantity) => {
           </p>
           <p>
             Disabled GMAP: <i>You must enable Billing on the Google Cloud Project
-            at https://console.cloud.google.com/project/_/billing/enable </i>
+              at <a href="https://console.cloud.google.com/project/_/billing/enable">billing/enable</a>
+          </i>
           </p>
           <Input />   
           <!-- <Gmap  /> -->
