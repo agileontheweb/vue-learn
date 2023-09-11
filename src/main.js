@@ -10,6 +10,7 @@ import messagesEs from './locales/es.json';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faVuejs } from '@fortawesome/free-brands-svg-icons';
+import VueSafeHTML from 'vue-safe-html';
 
 library.add(faVuejs);
 
@@ -27,6 +28,7 @@ const i18n = createI18n({
   const app = createApp(App);
   app.use(router);
   app.use(i18n);
+  app.use(VueSafeHTML);
   app.component('font-awesome-icon', FontAwesomeIcon);
   app.mount('#app');
   

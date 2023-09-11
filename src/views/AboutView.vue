@@ -1,4 +1,7 @@
 <script setup>
+import { safeHtml } from 'vue-safe-html';
+
+
 import { ref } from 'vue';
 import { onMounted } from 'vue';
 import { useRoute } from 'vue-router';
@@ -42,15 +45,15 @@ const scrollToSection = (sectionId) => {
           {{ t('bio.h1') }}
         </h1>
         {{ t('bio.p_1') }}
-        <p v-html="t('bio.p_2')"></p>
+        <p v-safe-html="t('bio.p_2')"></p>
         <p>{{ t('bio.p_3') }}</p>
         <p>{{ t('bio.p_4') }}</p>
         <p>{{ t('bio.p_5') }}</p>
-        <p v-html="t('bio.p_6')"></p>
+        <p v-safe-html="t('bio.p_6')"></p>
         <p>{{ t('bio.p_7') }}</p>      
-        <p v-html="t('bio.p_8')"></p>
-        <p v-html="t('bio.p_9')"></p>
-        <p v-html="t('bio.p_10')"></p>
+        <p v-safe-html="t('bio.p_8')"></p>
+        <p v-safe-html="t('bio.p_9')"></p>
+        <p v-safe-html="t('bio.p_10')"></p>
         <p>
           {{ t('bio.p_11') }}
           <ul>
@@ -75,7 +78,7 @@ const scrollToSection = (sectionId) => {
           {{ t('bio.p_12') }}
         </p>
         <p>
-          <p v-html="t('bio.p_13')"></p>
+          <p v-safe-html="t('bio.p_13')"></p>
         </p>
         <p>
           {{ t('bio.p_14') }}
@@ -83,10 +86,7 @@ const scrollToSection = (sectionId) => {
         <p>
           {{ t('bio.p_15') }}
         </p>
-        
-        <p v-html="t('bio.p_16')"></p>
-
-        
+        <p v-safe-html="t('bio.p_16')"></p>
         <p>
           {{ t('bio.p_17') }}
         </p>
