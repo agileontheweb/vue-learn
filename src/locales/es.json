@@ -1,0 +1,42 @@
+{  
+  "Custom": {
+    "brand" : "Alessandro Cuoghi"
+  },
+  "Nav": {
+    "project" : "Projecto",
+    "components" : "Somponentes",
+    "about" : "Sobre de mi"
+  },
+    "thisProject": {
+      "h1": "Primo progetto",
+      "startedOn": "Iniziato il 2 Settembre, 2023",
+      "today": "Oggi { currentDate }, ho investito per impare e sviuppare questo progetto approssimativmente <strong> { totalHours }:</strong>"
+    },
+    "customComponent": {
+      "title": "Custom Component",
+      "description": "Custom component description"
+    },
+    "bio": {
+      "h1": "Sobre mí",
+      "p_1": "Soy Alessandro Cuoghi \"año 1980\", he desarrollado esta página en Vue 3 para aprender cómo funciona. Me gusta el código y el campo del desarrollo Front End.",
+      "p_2": "He utilizado Angular y Ruby on Rails en el pasado durante 3/4 años.",
+      "p_3": "Empecé a utilizar ordenadores en 1998. Mi primer programa fue Photoshop, luego FreeHand y más tarde Flash y Action Script.",
+      "p_4": "Dos años después empecé con la suite de Adobe. Illustrator, Indesign, Adobe After Effects, Premiere y más. Al mismo tiempo abrí mi agencia web Dipnet durante 7 años en Italia. Durante este periodo abrí otros campos de estudio: Maya, 3D Studio Max, Cinema 4D, RealFlow y Combustion.",
+      "p_5": "Después de siete años cerré la webagencia y me fui a España, a Palma de Mallorca. Empecé mi nueva experiencia.",
+      "p_6": "Con otras dos personas abrimos <a href=\"https://www.rockandror.com/\">RockAndRor</a>, desarrollado en Ruby on Rails. Trabajamos durante tres años para StartUp y <a href=\"https://www.rockandror.com/consul/development-services\">Consul.</a>",
+      "p_7": "Durante ese tiempo aprendí a hablar y escribir en español. Viví allí siete años. En 2019 tuve que volver a Italia por motivos familiares.",
+      "p_8": "Mi inglés no es bueno, leo, escribo y hablo pero con errores, porque no uso este idioma todos los días.",
+      "p_9": "Me gusta el marketing y tengo algo de experiencia, he creado varios proyectos personales, uno de ellos es <a target=\"blank\" href=\"https://corsidigrafica.info\">corsidigrafica.info</a>.",
+      "p_10": "He creado algunos cursos, Illustrator Facile, Front End Web Development, Javascript Animation. Si desea obtener más información acerca de estos cursos por favor vea <a target=\"blank\" href=\"https://www.alessandrocuoghi.com/progetto-corsi-di-grafica.html\">la página</a>, (solo en italiano) ",
+      "p_11": "He trasladado los cursos a Udemy, por lo que la Landing Page y el carrito de la plataforma están desactivados.",
+      "p_12": "También he creado un nuevo proyecto en 2023 para probar ChatGPT e intentar ganar dinero con el programa de afiliados de Amazon y otros programas similares. El objetivo es colocar algunas páginas en la primera página de Google e intentar ganar algo de dinero utilizando estos sistemas.",
+      "p_13": "El nombre del proyecto es <a href=\"https://armoniebenessere.top/\" target=\"blank\"> armoniebenessere.top </a> Se trata de un pequeño proyecto creado en Wordpress. Desarrollé un tema personalizado e implementé Tailwind.",
+      "p_14": "Este no es mi campo de traba \"la salud\" pero me gusta probar cosas nuevas.",
+      "p_15": "Este es el resumen de mi vida hasta la fecha. He tenido muchas otras experiencias que no he escrito en esta página.",
+      "p_16": "Cosas que me gustan: El trabajo en equipo. La gimnasia artística. La música. Viajar. Aprender todo lo que me hace feliz.",
+      "p_17": "De todas las experiencias computerizadas, la de RockAndRor fue la mejor.       Aprendimos muchas cosas buenas sobre el desarrollo de aplicaciones. Participamos en el Madrid Open Mad.",
+      "p_18": "Además de tener pasión por el desarrollo web, los gráficos y el marketing tengo pasión por saltar y mantenerme en forma. Para los curiosos algunos desarrollos sencillos sacados de 2021.",
+      "h3_video": "3 vídeos antes de ir a la ducha de fin de formación."
+    }
+  }
+  

@@ -1,0 +1,48 @@
+{  
+    "Custom": {
+      "brand" : "Alessandro Cuoghi"
+    },
+    "Nav": {
+      "project" : "Project",
+      "components" : "Components",
+      "about" : "About"
+    },
+    "thisProject": {
+      "h1": "First Project",
+      "startedOn": "Started in September 2, 2023",
+      "today": "Today { currentDate },  i invested in learning and developing this project in approximately <strong> { totalHours }:</strong>"
+    },
+    "customComponent": {
+      "h1": "Custom Components",
+      "description": "I created some components to use in the project.",
+      "listComponents": "This is a List of Components:",
+      "component_slide_image": "Slide Image + Form Review",
+      "component_autocomplete": "AutoComplete + API: Air Quality",
+      "component_quote_api": "Quote Message API:",
+      "component_buttons_cart": "Button Cart",
+      "component_crud": "Crud"
+    },
+    "bio": {
+      "h1": "About Me",
+      "p_1": "Hi, i'am Alessandro Cuoghi and i developed this page in Vue 3 to learn how it works. I like code and the field of Front End developer.",
+      "p_2": "I used in the past Angular and Ruby on Rails for 3/4 years, also i try a little expierence  in React.",
+      "p_3": "I started to use a computer since 1998. My first Software was i started with Photoshop, after FreeHand. and  later Flash and i learn Action Script.",
+      "p_4": "Two years later i started to learn all the Adobe Suite. Adobe Illustrator, Indesign, Adobe After Effects, Premiere and more. In the same time i open my web agency Dipnet for 7 years in Italy. In this periodo I opened more field of study: Maya, 3D Studio Max, Cinema 4D, RealFlow and Combustion.",
+      "p_5": "After 7 years i closed the webagency and i goes in Spain, Palma de Mallorca. I started my new expereince.",
+      "p_6": "With another two person we have opened <a href=\"https://www.rockandror.com/\">RockAndRor</a>, developed in Ruby on Rails. We worked for three years for StartUp and also for <a href=\"https://www.rockandror.com/consul/development-services\">Consul.</a>",
+      "p_7": "In this period i learned to speak and write Spanish. I lived there for 7 years. After i needed come back in Italy for some Family reason.",
+      "p_8": "My english is not good, i read, write, and speak but with errors, because i don't use this language every day.",
+      "p_9": "I like marketing and have some experience. I created a small project, one of which is <a target=\"blank\" href=\"https://corsidigrafica.info\">corsidigrafica.info</a>.",
+      "p_10": "I crated some courses, Illustrator Facile, Sviluppo Web Front End, Animazione Javascript. If you want to see more about this courses <a target=\"blank\" href=\"https://www.alessandrocuoghi.com/progetto-corsi-di-grafica.html\">check the page</a> . (Only Italian Language) ",
+      "p_11": "I moved the course on Udemy, so the cart is disabled on my landing page, and i disabled my custom Platform.",
+      "p_12": "Also i created a new Project in 2023 to test ChatGPT and try to earn with Affiliation program Amazon and other similar program. The Goal is position some page in first page of Google.",
+      "p_13": "The name of Prohject is <a href=\"https://armoniebenessere.top/\" target=\"blank\"> armoniebenessere.top </a> Is a small project created in Wordpress. I develop a custom Theme, and implement Tailwind.",
+      "p_14": "This is not my field of work \"health\" but i like to try new  thing.",
+      "p_15": "This is the summary of my life to date. I have had many other experiences that I have not written on this page.",
+      "p_16": "Things that I like: Teamwork. Artistic Gymnastics. Music. Travel. Learning anything that makes me happy.",
+      "p_17": "Among the \"IT\" experiences, the one with RockAndRor was the best. We learned a lot of good things concerning App development. We participated in the Madrid Open Mad Hakaton.",
+      "p_18": "In addition to having a passion for web development, graphic design and marketing, I have a passion for jumping jacks and keeping fit. For the curious some simple developments taken from 2021.",
+      "h3_video": "3 videos before going to the end-of-training shower."
+    }
+  }
+  

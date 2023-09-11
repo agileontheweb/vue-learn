@@ -1,0 +1,48 @@
+{  
+  "Custom": {
+    "brand" : "Alessandro Cuoghi"
+  },
+  "Nav": {
+    "project" : "Progetto",
+    "components" : "Componenti",
+    "about" : "Su di me"
+  },
+    "thisProject": {
+      "h1": "Primo progetto",
+      "startedOn": "Iniziato il 2 Settembre, 2023",
+      "today": "Oggi { currentDate }, ho investito per impare e sviuppare questo progetto approssimativmente <strong> { totalHours }:</strong>"
+    },
+    "customComponent": {
+      "h1": "Componenti Custom",
+      "description": "Ho creato questa serie di componenti da usare nel progetto.",
+      "listComponents": "Lista di componenti:",
+      "component_slide_image": "Slide Image + Form ",
+      "component_autocomplete": "AutoComplete + API: Qualità aria",
+      "component_quote_api": "API: Citazioni ",
+      "component_buttons_cart": "Pulsanti + Carrello",
+      "component_crud": "Crud"
+    },
+    "bio": {
+      "h1": "Su di me",
+      "p_1": "Sono Alessandro Cuoghi \"anno 1980\", ho sviluppato questa pagina in Vue 3 per imparare come funziona. Mi piace il codice e il campo dello sviluppo Front End.",
+      "p_2": "<strong> Software usati durante la mia esperienza:</strong> Illustrator, Photoshop, Adobe Acrobat, After Effects, Premiere, Flash, Adobe Distiller, Maya, 3DMax, Combustion, Cinema 4D, RealFlow, Z-brush. Html, Haml, Css, Scss, Javascript, Typescript, Jquery, Gsap, Angular, React, Php, Actionscript 2/3, Ruby on Rails, Laravel, Ionic, Bootstrap, Foundation, Tailwind, Node, Gulp, Grunt, Github, Github Desktop, Wordpress, Google Analytics, Hotjar, Facebook Business Manager. Direct Marketing, (Aweber, GetResponse, MailerLite, Mailchimp)",
+      "p_3": "Ho iniziato a usare il computer nel 1998. Il mio primo software è stato Photoshop, poi FreeHand e successivamente Flash e Action Script.",
+      "p_4": "Due anni dopo ho iniziato con la suite Adobe. Illustrator, Indesign, Adobe After Effects, Premiere e altro ancora. Nello stesso periodo ho avviato insieme a 3 soci una agenzia web da nome Dipnet per 7 anni in Italia. In questo periodo ho aperto altri campi di studio: Maya, 3D Studio Max, Cinema 4D, RealFlow e Combustion etc..",
+      "p_5": "Dopo 7 anni esco dalla webagency per iniziare una nuova avventura. Vado in Spagna, prima Canarie poi Baleari Palma di Maiorca.",
+      "p_6": "Dopo un peroido di assetto, dove ho lavorato come Marketer, disegnatore grafico e insegnate privato di informatica consoco due persone e così abbiamo aperto <a href=\"https://www.rockandror.com/\">RockAndRor</a>, sviluppo in Ruby on Rails. Abbiamo lavorato per tre anni per StartUp e <a href=\"https://www.rockandror.com/consul/development-services\">Consul.</a>",
+      "p_7": "In questo periodo ho imparato a parlare e a scrivere in spagnolo. Ho vissuto lì per 7 anni. Anche questa avventura si conclude nel 2019 quando torno in Italia per motivi familiari.",
+      "p_8": "<strong>Alcune Skill: </strong>Il mio inglese non è buono, leggo, scrivo e parlo ma con errori, perché non uso questa lingua tutti i giorni.",
+      "p_9": "Mi piace il marketing e ho avuto qualche esperienza, ho creato vari progetti personali, uno dei quali è  <a target=\"blank\" href=\"https://corsidigrafica.info\">corsidigrafica.info</a>.",
+      "p_10": "Ho creato alcuni corsi, Illustrator Facile, Sviluppo Web Front End, Animazione Javascript. Se vuoi saperne di più su questi corsi guarda <a target=\"blank\" href=\"https://www.alessandrocuoghi.com/progetto-corsi-di-grafica.html\">la pagina dedicata</a>, (solo in italiano) ",
+      "p_11": "Ho spostato i corsi su Udemy, quindi il carrello delle Landing Page e della piattaforma è ormai disabilitato.",
+      "p_12": "Gennaio 2023 inizio un nuovo mini progetto orientato alle affiliazioni. Decido di voler provare a guadagnare con il programma di affiliazione Amazon e altri programmi simili. L'obiettivo è posizionare alcune pagine nella prima pagina di Google..",
+      "p_13": "Il nome del progetto è <a href=\"https://armoniebenessere.top/\" target=\"blank\"> armoniebenessere.top </a>, lo tengo attivo anche se non ci lavoro assiduamente, è un test sul lungo periodo . Ho sviluppato un tema personalizzato in Wordpress, implementato Tailwind.  Per la stesura degli articoli non essendo del campo Salute ho provato ad usare ChatGpt unito alle mie conoscenze SEO .",
+      "p_14": "Salute e Benessere non è realmente il mio campo di lavoro ma adoro provare sempre cose nuove che spaziano fuori dal mio settore, mi aiutano a mantenere il cervello attivo.",
+      "p_15": "Questo è il riassunto della mia vita fino ad oggi. Ho avuto molte altre esperienze che non ho scritto in questa pagina.",
+      "p_16": "<strong>Cose che mi piacciono:</strong> Il lavoro di squadra. La ginnastica artistica. La musica. Viaggiare in Camper. Olte che viaggiare mi piacciono i lavori manuali, infatti tutto l'allestimento del camper l'ho costruito da zero in 2 anni.",
+      "p_17": "Tra le esperienze \"informatiche\" quella con RockAndRor è stata la migliore. Abbiamo imparato tante belle cose che riguardano lo sviluppo di Applicazioni robuste scritte con codice pulito. Questo periodo è stato quello che ha dato la svolta reale a cosa significhi lavorare in squadra con metodologia Agile fabbricando prodotti MVP. Abbiamo anche parteciapto alla Hakaton di Madrid Open Mad di 72 ore.",
+      "p_18": "Oltre ad avere la passione dello sviluppo web, della grafica e marketing ho la passione di fare i salti mortali e mantenermi in forma. Per i più curiosi qualche semplice evoluzione presa dal 2021.",
+      "h3_video": "3 video prima di andare alla doccia di fine allenamento."
+    }
+  }
+  
