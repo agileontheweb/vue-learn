@@ -1,17 +1,41 @@
 <script setup>
-import { defineProps } from 'vue';
+import { ref, onMounted, defineProps } from 'vue';
 import { useI18n } from 'vue-i18n';
 const { t, locale } = useI18n();
+import { gsap } from 'gsap';
 
 const changeLanguage = (newLocale) => {
   locale.value = newLocale;
 };
 
+const myFace = ref(null);
+  
+  onMounted(() => {
+    gsap.from(myFace.value, {
+      opacity: 0,
+      duration: 3,
+      ease: 'power2.out',
+    });
+    
+    gsap.set("nav ul li", {
+      y: 100,
+      opacity:0
+    });
+
+    gsap.to("nav ul li", {
+      y: 0,
+      stagger: 0.1,
+      opacity:1
+    });
+    
+  });
 </script>
 
 <template>
   <div class="py-12 text-center container">
-    <img src="https://alessandrocuoghi.com/img/foto_io-small.jpg" 
+    <img
+      ref="myFace"
+      src="https://alessandrocuoghi.com/img/foto_io-small.jpg" 
       alt="Alessandro Cuoghi"
       class="my-face">
       <div class="text-3xl uppercase my-6 font-semibold ">
