@@ -54,12 +54,12 @@ const myFace = ref(null);
             <RouterLink to="/">{{ t('Nav.project') }}</RouterLink>
         </li>
         <li
-            :class="{ 'btn-active': $route.path === '/customComponents/topPage' }">  
-            <RouterLink :to="{ name: 'customComponents', params: { section: 'topPage' } }">{{ t('Nav.components') }}</RouterLink>
+            :class="{ 'btn-active': $route.path === '/customComponents' }">  
+            <RouterLink :to="{ name: 'customComponents' }">{{ t('Nav.components') }}</RouterLink>
         </li>
         <li
-            :class="{ 'btn-active': $route.path === '/about/topPage' }">
-            <RouterLink :to="{ name: 'about', params: { section: 'topPage' } }">{{ t('Nav.about') }}</RouterLink>
+            :class="{ 'btn-active': $route.path === '/about' }">
+            <RouterLink :to="{ name: 'about' }">{{ t('Nav.about') }}</RouterLink>
         </li>
         <li>
           <a href="https://github.com/agileontheweb/vue-learn/" target="_blank" rel="noopener">Github</a>

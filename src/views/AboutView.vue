@@ -1,44 +1,35 @@
 <script setup>
+import scrollMixin from '../assets/scrollMixin.js';
+
 import { safeHtml } from 'vue-safe-html';
-
-
 import { ref } from 'vue';
 import { onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
+
 const { t } = useI18n();
+
 const pageTitle = ref('Biografia');
 const pageDescription = ref('Questa e la pagina della Bio.');
 
 const route = useRoute();
-const topPage = ref(null);
-const sections = {
-  topPage: topPage
-};
+const fragment = route.params.section || 'topPage';
 
 onMounted(() => {
-  const fragment = route.params.section;
-  scrollToSection(fragment);
+  scrollMixin.methods.scrollToSection(fragment);
+
   document.title = pageTitle.value;
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', pageDescription.value);
-    }
-});
-
-const scrollToSection = (sectionId) => {
-  const sectionElement = sections[sectionId];
-  if (sectionElement.value) {
-    sectionElement.value.scrollIntoView({ behavior: 'smooth' });
+  const metaDescription = document.querySelector('meta[name="description"]');
+  if (metaDescription) {
+    metaDescription.setAttribute('content', pageDescription.value);
   }
-};
-
+});
 </script>
 
 
 <template>
     <div class="border bg-gray-100">
-      <section ref="topPage"></section>
+      <section id="topPage"></section>
     <div class="container">  
 
         <h1>

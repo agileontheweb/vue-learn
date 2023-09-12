@@ -13,6 +13,7 @@
   import TopAlert from '../components/customComponents/TopAlert.vue'
   import Toast from '../components/customComponents/Toast.vue'
   import Crud from '../components/customComponents/Crud.vue'
+  import scrollMixin from '../assets/scrollMixin.js';
   
   import { useI18n } from 'vue-i18n';
   const pageTitle = ref('Componenti');
@@ -20,10 +21,11 @@
 
   const { t } = useI18n();
   const route = useRoute();
-  
+  const fragment = route.params.section || 'topPage';
+
   onMounted(() => {
-    const fragment = route.params.section;
-    scrollToSection(fragment);
+    scrollMixin.methods.scrollToSection(fragment);
+
     document.title = pageTitle.value;
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -31,67 +33,57 @@
     }
   });
 
+  const topPage = ref(null);
+  const buttonReview = ref(null);
+  const buttonSection = ref(null);
+  const inputSection = ref(null);
+  const quoteSection = ref(null);
+  const crudSection = ref(null);
 
+  const sections = {
+    topPage: topPage,
+    buttonReview: buttonReview,
+    buttonSection: buttonSection,
+    inputSection: inputSection,
+    quoteSection: quoteSection,
+    crudSection: crudSection,
+  };
 
-const topPage = ref(null);
-const buttonReview = ref(null);
-const buttonSection = ref(null);
-const inputSection = ref(null);
-const quoteSection = ref(null);
-const crudSection = ref(null);
+  const message = ref("Add Products in cart");
+  const showToast = ref(false);
 
+  const quantity = ref(0);
+  const cartItems = ref([]);
+  const totalItemCart = ref(0);
 
-const sections = {
-  topPage: topPage,
-  buttonReview: buttonReview,
-  buttonSection: buttonSection,
-  inputSection: inputSection,
-  quoteSection: quoteSection,
-  crudSection: crudSection,
-};
-
-const scrollToSection = (sectionId) => {
-  const sectionElement = sections[sectionId];
-  if (sectionElement.value) {
-    sectionElement.value.scrollIntoView({ behavior: 'smooth' });
-  }
-};
-
-const message = ref("Add Products in cart");
-const showToast = ref(false);
-
-const quantity = ref(0);
-const cartItems = ref([]);
-const totalItemCart = ref(0);
-
-const addToCartHandler = (item) => {
-  const existingItem = cartItems.value.find((cartItem) => cartItem.title === item.title);
-  
-  if (existingItem) {
-    existingItem.quantity += 1;
+  const addToCartHandler = (item) => {
+    const existingItem = cartItems.value.find((cartItem) => cartItem.title === item.title);
     
-  } else {
-    cartItems.value.push({ ...item, quantity: 1 });
-  }
-  
-  showToast.value = true;
-  totalItemCart.value = cartItems.value.reduce((total, item) => total + item.quantity, 0);
-};
+    if (existingItem) {
+      existingItem.quantity += 1;
+      
+    } else {
+      cartItems.value.push({ ...item, quantity: 1 });
+    }
+    
+    showToast.value = true;
+    totalItemCart.value = cartItems.value.reduce((total, item) => total + item.quantity, 0);
+  };
 
-const closeToast = () => {
-  showToast.value = false;
-};
+  const closeToast = () => {
+    showToast.value = false;
+  };
 
-const updateTotalItemCart = (updatedQuantity) => {
-  totalItemCart.value = updatedQuantity;
-};
-
+  const updateTotalItemCart = (updatedQuantity) => {
+    totalItemCart.value = updatedQuantity;
+  };
 
 </script>
 
 <template>
   <div class="bg-gray-100">
-    <section ref="topPage"></section>
+    <section id="topPage"></section>
+
     <div class="container">      
         <h1 class="text-3xl mt-6">
           {{ t('customComponent.h1') }}

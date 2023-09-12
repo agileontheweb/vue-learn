@@ -1,12 +1,15 @@
 <script setup>
   const totalHours = "60";
+  import scrollMixin from '../assets/scrollMixin.js';
   import { RouterLink } from 'vue-router';
   import { ref, defineProps, onMounted } from 'vue';
+  import { useRoute } from 'vue-router';
   import { useI18n } from 'vue-i18n';
   import { computed } from 'vue';
 
   const { t } = useI18n();
-  
+  const route = useRoute();
+  const fragment = route.params.section || 'topPage';
   const pageTitle = ref(t('thisProject.metaTitle'));
   const pageDescription = ref(t('thisProject.metaDescription'));
   
@@ -15,6 +18,8 @@
   });
   
   onMounted(() => {
+    scrollMixin.methods.scrollToSection(fragment);
+
     document.title = pageTitle.value;
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -25,6 +30,8 @@
 
 <template>      
   <div class="border bg-gray-100">
+    <section id="topPage"></section>
+
     <div class="container">
       <h1>
         {{ t('thisProject.h1') }}
