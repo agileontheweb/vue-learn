@@ -9,6 +9,10 @@
     "about" : "Bio"
   },
     "thisProject": {
+      "meta":{
+        "title": "IT Prohetto Vue",
+        "description": "IT Progetto in VUE 3 dewcrizione"
+      },
       "metaTitle": "Titolo Progetto",
       "metaDescription": "Descrizione Progetto",
       "h1": "Primo progetto in",
@@ -46,6 +50,10 @@
       "p_7": "Guarda i componenti creati."
     },
     "customComponent": {
+      "meta":{
+        "title": "IT Componenti in VUE",
+        "description": "IT Descrizione pagina componenti "
+      },
       "h1": "Componenti Custom",
       "description": "Ho creato questa serie di componenti da usare nel progetto.",
       "listComponents": "Lista di componenti:",
@@ -72,8 +80,8 @@
     },
     "bio": {
       "meta":{
-        "title": "Chi sono",
-        "description": "descrizione bio"
+        "title": "IT Chi sono",
+        "description": "IT descrizione bio"
       },
       "h1": "Su di me",
       "p_1": "Sono Alessandro Cuoghi \"anno 1980\", ho sviluppato questa pagina in Vue 3 per imparare come funziona. Mi piace il codice e il campo dello sviluppo Front End.",

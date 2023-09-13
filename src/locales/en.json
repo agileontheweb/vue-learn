@@ -8,6 +8,10 @@
       "about" : "About"
     },
     "thisProject": {
+      "meta":{
+        "title": "EN First Project in VUE 3",
+        "description": "EN Description About this project"
+      },
       "metaTitle": "Project title",
       "metaDescription": "Project description",
       "h1": "First Project",
@@ -15,6 +19,10 @@
       "today": "Today { currentDate },  i invested in learning and developing this project in approximately <strong> { totalHours }:</strong>"
     },
     "customComponent": {
+      "meta":{
+        "title": "EN Componentes in VUE",
+        "description": "EN Description..."
+      },
       "h1": "Custom Components",
       "description": "I created some components to use in the project.",
       "listComponents": "This is a List of Components:",
@@ -26,8 +34,8 @@
     },
     "bio": {
       "meta":{
-        "title": "About Me",
-        "description": "Descriptionabout me"
+        "title": "EN About Me",
+        "description": "EN Descriptionabout me"
       },
       "h1": "About Me",
       "p_1": "Hi, i'am Alessandro Cuoghi and i developed this page in Vue 3 to learn how it works. I like code and the field of Front End developer.",
