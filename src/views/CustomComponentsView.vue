@@ -93,26 +93,26 @@
         <p>{{ t('customComponent.description') }}</p>
         <p>{{ t('customComponent.listComponents') }}</p>
         <ul>
-          <li @click="scrollToSection('buttonReview')">
+          <li @click="scrollMixin.methods.scrollToSection('buttonReview')">
             <a>{{ t('customComponent.component_slide_image') }}</a>
           </li>
-          <li @click="scrollToSection('inputSection')">
+          <li @click="scrollMixin.methods.scrollToSection('inputSection')">
             <a>{{ t('customComponent.component_autocomplete.title') }}</a>
           </li>
-          <li @click="scrollToSection('quoteSection')">
+          <li @click="scrollMixin.methods.scrollToSection('quoteSection')">
             <a>{{ t('customComponent.component_quote_api') }}</a>
           </li>
-          <li @click="scrollToSection('buttonSection')">
+          <li @click="scrollMixin.methods.scrollToSection('buttonSection')">
             <a>{{ t('customComponent.component_buttons_cart') }}</a>
           </li>
-          <li @click="scrollToSection('crudSection')">
+          <li @click="scrollMixin.methods.scrollToSection('crudSection')">
             <a>{{ t('customComponent.component_crud') }}</a>
           </li>
         </ul>
     </div>
     
     <div class="bg-gray-200">
-      <section ref="buttonReview" class="container">
+      <section id="buttonReview" class="container">
         <div class="max-w-screen-md mx-auto py-8">
           <div class="mb-6">
             <h2>{{ t('customComponent.component_slide_image') }}</h2>
@@ -137,7 +137,7 @@
     </div>
     
     <div class="bg-white">
-      <section ref="inputSection" class="container">
+      <section id="inputSection" class="container">
         <div class="max-w-screen-md mx-auto py-8">      
           <h2>{{ t('customComponent.component_autocomplete.title') }}</h2>
           <p>
@@ -153,7 +153,7 @@
     </div>
 
     <div class="bg-gray-200">
-      <section ref="quoteSection" class="container">
+      <section id="quoteSection" class="container">
         <div class="max-w-screen-md mx-auto py-8">      
           <h2>{{ t('customComponent.component_quote_api.title') }}</h2>
           <p v-safe-html="t('customComponent.component_quote_api.p_1')"></p>
@@ -165,7 +165,7 @@
     </div>
 
     <div class="bg-white">
-      <section ref="buttonSection" class="container">
+      <section id="buttonSection" class="container">
         <div class="max-w-screen-md mx-auto py-8">
           <TopAlert :totalItemCart="totalItemCart" />
           <div class="border-b-2 py-6">
@@ -189,7 +189,7 @@
       </section>
 
       <div class="bg-gray-200">
-        <section ref="crudSection" class="container">
+        <section id="crudSection" class="container">
           <div class="max-w-screen-md mx-auto py-8">
             <h2 class="mt-6">CRUD </h2>
             <p>Add, Modify, Remove Item. Use CRUD and FIREBASE</p>
