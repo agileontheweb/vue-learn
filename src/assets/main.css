@@ -26,6 +26,10 @@
     .btn-active{
         @apply border-b-2 border-green-500 text-green-500;
     }
+    
+    .lang-active {
+        @apply text-green-500;
+    }
 
     .my-face {
         @apply rounded-full w-40 mx-auto;

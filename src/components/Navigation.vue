@@ -50,9 +50,24 @@ const myFace = ref(null);
       <font-awesome-icon :icon="['fab', 'vuejs']" class="text-green-600 text-4xl mt-3" />
     <nav>    
       <div class="inline-block h-10 px-3 justify-center py-2 mt-4 border-green-100/30 border rounded-full ">
-        <button class="mx-2 hover:text-green-500" @click="changeLanguage('it')">ITA</button>
-        <button class="mx-2 hover:text-green-500" @click="changeLanguage('en')">ENG</button>
-        <button class="mx-2 hover:text-green-500" @click="changeLanguage('es')">ESP</button>
+        <button
+          class="mx-2 hover:text-green-500"
+          :class="{ 'lang-active': locale === 'it' }"
+          @click="changeLanguage('it')">
+          ITA
+        </button>
+        <button
+          class="mx-2 hover:text-green-500"
+          :class="{ 'lang-active': locale === 'en' }"
+          @click="changeLanguage('en')">
+          ENG
+        </button>
+        <button
+          class="mx-2 hover:text-green-500"
+          :class="{ 'lang-active': locale === 'es' }"
+          @click="changeLanguage('es')">
+          ESP
+        </button>
       </div>
       <ul class="flex justify-center gap-4 mt-10">
         <li
