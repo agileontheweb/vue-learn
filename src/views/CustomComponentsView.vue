@@ -14,23 +14,25 @@
   import Toast from '../components/customComponents/Toast.vue'
   import Crud from '../components/customComponents/Crud.vue'
   import scrollMixin from '../assets/scrollMixin.js';
+  import { setMetaInfo } from '../assets/metaHelper.js';
   
   import { useI18n } from 'vue-i18n';
-  const pageTitle = ref('Componenti');
-  const pageDescription = ref('Questa e la pagina componenti.');
+  
 
   const { t } = useI18n();
   const route = useRoute();
   const fragment = route.params.section || 'topPage';
-
+  const pageTitle = ref(t('customComponent.meta.title'));
+  const pageDescription = ref(t('customComponent.meta.description'));
   onMounted(() => {
     scrollMixin.methods.scrollToSection(fragment);
+    setMetaInfo(pageTitle.value, pageDescription.value);
 
-    document.title = pageTitle.value;
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', pageDescription.value);
-    }
+    // document.title = pageTitle.value;
+    // const metaDescription = document.querySelector('meta[name="description"]');
+    // if (metaDescription) {
+    //   metaDescription.setAttribute('content', pageDescription.value);
+    // }
   });
 
   const topPage = ref(null);
