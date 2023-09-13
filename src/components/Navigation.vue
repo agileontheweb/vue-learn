@@ -1,11 +1,18 @@
 <script setup>
 import { ref, onMounted, defineProps } from 'vue';
 import { useI18n } from 'vue-i18n';
-const { t, locale } = useI18n();
 import { gsap } from 'gsap';
+import { setMetaInfo } from '../assets/metaHelper.js';
+
+const { t, locale } = useI18n();
+const pageTitle = ref('');
+const pageDescription = ref('');
 
 const changeLanguage = (newLocale) => {
   locale.value = newLocale;
+  pageTitle.value = t(`bio.meta.title`, { locale: newLocale });
+  pageDescription.value = t(`bio.meta.description`, { locale: newLocale });
+  setMetaInfo(pageTitle.value, pageDescription.value);
 };
 
 const myFace = ref(null);

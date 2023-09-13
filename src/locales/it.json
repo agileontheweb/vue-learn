@@ -71,6 +71,10 @@
       }
     },
     "bio": {
+      "meta":{
+        "title": "Chi sono",
+        "description": "descrizione bio"
+      },
       "h1": "Su di me",
       "p_1": "Sono Alessandro Cuoghi \"anno 1980\", ho sviluppato questa pagina in Vue 3 per imparare come funziona. Mi piace il codice e il campo dello sviluppo Front End.",
       "p_2": "<strong> Software usati durante la mia esperienza:</strong> Illustrator, Photoshop, Adobe Acrobat, After Effects, Premiere, Flash, Adobe Distiller, Maya, 3DMax, Combustion, Cinema 4D, RealFlow, Z-brush. Html, Haml, Css, Scss, Javascript, Typescript, Jquery, Gsap, Angular, React, Php, Actionscript 2/3, Ruby on Rails, Laravel, Ionic, Bootstrap, Foundation, Tailwind, Node, Gulp, Grunt, Github, Github Desktop, Wordpress, Google Analytics, Hotjar, Facebook Business Manager. Direct Marketing, (Aweber, GetResponse, MailerLite, Mailchimp)",

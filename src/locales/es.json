@@ -19,6 +19,10 @@
       "description": "Custom component description"
     },
     "bio": {
+      "meta":{
+        "title": "Sobre de mi",
+        "description": "descripcion sobre de mi"
+      },
       "h1": "Sobre mí",
       "p_1": "Soy Alessandro Cuoghi \"año 1980\", he desarrollado esta página en Vue 3 para aprender cómo funciona. Me gusta el código y el campo del desarrollo Front End.",
       "p_2": "He utilizado Angular y Ruby on Rails en el pasado durante 3/4 años.",

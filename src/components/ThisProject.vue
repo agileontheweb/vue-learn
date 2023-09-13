@@ -6,6 +6,7 @@
   import { useRoute } from 'vue-router';
   import { useI18n } from 'vue-i18n';
   import { computed } from 'vue';
+  import { setMetaInfo } from '../assets/metaHelper.js';
 
   const { t } = useI18n();
   const route = useRoute();
@@ -19,12 +20,7 @@
   
   onMounted(() => {
     scrollMixin.methods.scrollToSection(fragment);
-
-    document.title = pageTitle.value;
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', pageDescription.value);
-    }
+    setMetaInfo(pageTitle.value, pageDescription.value);
   });
 </script>
 

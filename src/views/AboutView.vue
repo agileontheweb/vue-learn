@@ -1,5 +1,6 @@
 <script setup>
 import scrollMixin from '../assets/scrollMixin.js';
+import { setMetaInfo } from '../assets/metaHelper.js';
 
 import { safeHtml } from 'vue-safe-html';
 import { ref } from 'vue';
@@ -7,22 +8,18 @@ import { onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 
-const { t } = useI18n();
-
-const pageTitle = ref('Biografia');
-const pageDescription = ref('Questa e la pagina della Bio.');
-
 const route = useRoute();
 const fragment = route.params.section || 'topPage';
 
-onMounted(() => {
-  scrollMixin.methods.scrollToSection(fragment);
+const pageTitle = ref('');
+const pageDescription = ref('');
+const { t } = useI18n();
 
-  document.title = pageTitle.value;
-  const metaDescription = document.querySelector('meta[name="description"]');
-  if (metaDescription) {
-    metaDescription.setAttribute('content', pageDescription.value);
-  }
+onMounted(async () => {
+  await t.value.loaded;
+
+  scrollMixin.methods.scrollToSection(fragment);
+  setMetaInfo(pageTitle.value, pageDescription.value);
 });
 </script>
 
