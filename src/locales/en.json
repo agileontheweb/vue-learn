@@ -25,6 +25,10 @@
       "component_crud": "Crud"
     },
     "bio": {
+      "meta":{
+        "title": "About Me",
+        "description": "Descriptionabout me"
+      },
       "h1": "About Me",
       "p_1": "Hi, i'am Alessandro Cuoghi and i developed this page in Vue 3 to learn how it works. I like code and the field of Front End developer.",
       "p_2": "I used in the past Angular and Ruby on Rails for 3/4 years, also i try a little expierence  in React.",
