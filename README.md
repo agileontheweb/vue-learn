@@ -1,3 +1,4 @@
-# vue-learn
+# Learn Vue 3 
 
-Check the demo on alessandrocuoghi.com/vue/vue-learn-first-project
+You can see the demo on (https://alessandrocuoghi.com/vue/vue-learn-first-project).
+
