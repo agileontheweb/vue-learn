@@ -3,15 +3,39 @@ import { ref, onMounted, defineProps } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { gsap } from 'gsap';
 import { setMetaInfo } from '../assets/metaHelper.js';
+import { useRouter } from 'vue-router'; // Importa useRouter
 
 const { t, locale } = useI18n();
+const router = useRouter();
+
 const pageTitle = ref('');
 const pageDescription = ref('');
 
 const changeLanguage = (newLocale) => {
   locale.value = newLocale;
-  pageTitle.value = t(`bio.meta.title`, { locale: newLocale });
-  pageDescription.value = t(`bio.meta.description`, { locale: newLocale });
+  const currentPage = router.currentRoute.value;
+  let titleKey = '';
+  let descriptionKey = '';
+  
+  switch (currentPage.name) {
+    case 'thisProject':
+      titleKey = `thisProject.meta.title`;
+      descriptionKey = `thisProject.meta.description`;
+      break;
+    case 'customComponents':
+      titleKey = `customComponent.meta.title`;
+      descriptionKey = `customComponent.meta.description`;
+      break;
+    case 'about':
+      titleKey = `bio.meta.title`;
+      descriptionKey = `bio.meta.description`;
+      break;
+    default:
+      break;
+  }
+
+  pageTitle.value = t(titleKey, { locale: newLocale });
+  pageDescription.value = t(descriptionKey, { locale: newLocale });
   setMetaInfo(pageTitle.value, pageDescription.value);
 };
 
