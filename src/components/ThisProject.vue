@@ -1,5 +1,5 @@
 <script setup>
-  const totalHours = "60";
+  const totalHours = "65";
   import scrollMixin from '../assets/scrollMixin.js';
   import { setMetaInfo } from '../assets/metaHelper.js';
   import { RouterLink } from 'vue-router';
