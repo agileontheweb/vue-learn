@@ -17,7 +17,8 @@
   import { setMetaInfo } from '../assets/metaHelper.js';
   
   import { useI18n } from 'vue-i18n';
-  
+  import PayButtonStripe from '../components/customComponents/PayButtonStripe.vue'; // Assicurati che il percorso sia corretto
+
 
   const { t } = useI18n();
   const route = useRoute();
@@ -82,6 +83,9 @@
 
 </script>
 
+
+
+
 <template>
   <div class="bg-gray-100">
     <section id="topPage"></section>
@@ -111,9 +115,16 @@
         </ul>
     </div>
     
+    
+
     <div class="bg-gray-200">
       <section id="buttonReview" class="container">
         <div class="max-w-screen-md mx-auto py-8">
+
+          <div>
+            <PayButtonStripe />
+          </div>
+          
           <div class="mb-6">
             <h2>{{ t('customComponent.component_slide_image') }}</h2>
             <p>
