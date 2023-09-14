@@ -120,14 +120,6 @@
               {{ t('customComponent.slideImage.p_1') }}
             </p>
             <p>
-              <code>
-                &lt;Card productName="Product 1" productDescription="Description 1 " :images="imageSrcArrayOne"/&gt;
-              </code>
-            </p>
-            <p>
-              {{ t('customComponent.slideImage.p_2') }}
-            </p>
-            <p>
               {{ t('customComponent.slideImage.p_3') }}
             </p>
           </div>

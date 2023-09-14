@@ -104,6 +104,22 @@ onMounted(() => {
           <iframe class="w-full aspect-video rounded-lg shadow-lg h-80"
           src="https://www.youtube.com/embed/xNfo34HDNjM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" data-ruffle-polyfilled=""></iframe>
         </div>
+
+        <h3>
+          {{ t('bio.h3_past') }}
+        </h3>
+
+        <p>
+          {{ t('bio.p_19') }}
+        </p>
+
+        <h3>
+          {{ t('bio.h3_travel') }}
+        </h3>
+
+        <p>
+          {{ t('bio.p_20') }}
+        </p>
     </div>
   </div>
 </template>
