@@ -4,15 +4,13 @@
         <div class="container">  
             <h2>Carrello</h2>
             <ul>
-              
-
                 <li v-for="product in cart" :key="product.id" class="border">
                 {{ product.name }}
                 <!-- - {{ formatPrice(product.price) }} -->
                 <img :src="product.images" alt="Immagine del prodotto" class="w-20   mx-auto"/>
                 </li>
             </ul>
-            <!-- <button class="btn-primary mt-3" @click="checkoutWithStripe">Paga</button> -->
+            <button class="btn-primary" @click="submit">Pay now!</button>
         </div>
         <StripeCheckout
             ref="checkoutRef"
@@ -23,7 +21,7 @@
             :cancel-url="cancelURL"
             @loading="loading = $event"
         />
-        <button class="btn-primary" @click="submit">Pay now!</button>
+        
         <Toast :myprop="message" :showToast="showToast" @closeToast="closeToast" />
         </div>
   </template>
