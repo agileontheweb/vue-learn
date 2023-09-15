@@ -18,6 +18,7 @@
   
   import { useI18n } from 'vue-i18n';
   import PayButtonStripe from '../components/customComponents/PayButtonStripe.vue'; // Assicurati che il percorso sia corretto
+  import StripeCheckoutButton from '../components/customComponents/StripeCheckoutButton.vue'; // Assicurati che il percorso sia corretto
 
 
   const { t } = useI18n();
@@ -123,6 +124,7 @@
 
           <div>
             <PayButtonStripe />
+            <StripeCheckoutButton />
           </div>
           
           <div class="mb-6">
