@@ -14,12 +14,11 @@
   import Toast from '../components/customComponents/Toast.vue'
   import Crud from '../components/customComponents/Crud.vue'
   import scrollMixin from '../assets/scrollMixin.js';
-  import { setMetaInfo } from '../assets/metaHelper.js';
-  
+  import { setMetaInfo } from '../assets/metaHelper.js'; 
+
   import { useI18n } from 'vue-i18n';
   import StripeItem from '../components/customComponents/StripeItem.vue';
-  import StripeCheckoutButton from '../components/customComponents/StripeCheckoutButton.vue'; // Assicurati che il percorso sia corretto
-
+  import StripeProducts from '../components/customComponents/StripeProducts.vue';
 
   const { t } = useI18n();
   const route = useRoute();
@@ -29,14 +28,9 @@
   onMounted(() => {
     scrollMixin.methods.scrollToSection(fragment);
     setMetaInfo(pageTitle.value, pageDescription.value);
-
-    // document.title = pageTitle.value;
-    // const metaDescription = document.querySelector('meta[name="description"]');
-    // if (metaDescription) {
-    //   metaDescription.setAttribute('content', pageDescription.value);
-    // }
   });
 
+  
   const topPage = ref(null);
   const buttonReview = ref(null);
   const buttonSection = ref(null);
@@ -77,11 +71,10 @@
   const closeToast = () => {
     showToast.value = false;
   };
-
+  
   const updateTotalItemCart = (updatedQuantity) => {
     totalItemCart.value = updatedQuantity;
   };
-
 </script>
 
 <template>
@@ -124,10 +117,9 @@
                DATA: Qualsiasi futura. Puoi testare anche una carta scaduta: 4000000000009995
               <a href="https://stripe.com/docs/testing">Dati</a>
             </p>
+            <StripeProducts />
             <StripeItem :idPrice="'price_1NpvKGBI9AUPHPQbihmB2Zu4'" />
             <StripeItem :idPrice="'price_1NqDNPBI9AUPHPQbG23kVMQz'" />
-            <!-- <StripeCheckoutButton /> -->
-            
           </div>
         </div>
       </section>
