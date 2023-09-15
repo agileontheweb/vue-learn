@@ -19,7 +19,6 @@
   
   const loadProducts = async () => {
     try {
-      // Carica i prodotti da Stripe usando la tua chiave pubblica
       const response = await fetch('https://api.stripe.com/v1/products', {
         headers: {
           Authorization: `Bearer ${secretKey}`,
