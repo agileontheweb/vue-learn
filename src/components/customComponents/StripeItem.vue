@@ -21,7 +21,7 @@
   </template>
   
 <script setup>
-// import { StripeCheckout } from '@vue-stripe/vue-stripe'; //rompe route nella navigazione
+//  import { StripeCheckout } from '@vue-stripe/vue-stripe'; //rompe route nella navigazione
   import { ref, onMounted } from 'vue';
   import { STRIPE_PUBLISHABLE_KEY } from '../../apikey';
   import { STRIPE_SECRET_KEY } from '../../apikey';
