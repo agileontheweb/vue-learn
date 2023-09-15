@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed top-0 z-20">
+    <div class="fixed top-0 z-20 mt-2">
         <div v-if="showToast" class="flex items-center bg-green-500 border-l-4 border-green-700 py-2 px-3 shadow-md mb-2 rounded-full">
         <!-- icons -->
        <div class="text-green-500 rounded-full bg-white mr-3">
@@ -30,7 +30,7 @@ watchEffect(() => {
   if (props.showToast) {
     setTimeout(() => {
         emits('closeToast');
-    }, 700); 
+    }, 1200); 
   }
 });
 
