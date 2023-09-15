@@ -17,7 +17,7 @@
   import { setMetaInfo } from '../assets/metaHelper.js';
   
   import { useI18n } from 'vue-i18n';
-  import PayButtonStripe from '../components/customComponents/PayButtonStripe.vue'; // Assicurati che il percorso sia corretto
+  import StripeItem from '../components/customComponents/StripeItem.vue';
   import StripeCheckoutButton from '../components/customComponents/StripeCheckoutButton.vue'; // Assicurati che il percorso sia corretto
 
 
@@ -84,9 +84,6 @@
 
 </script>
 
-
-
-
 <template>
   <div class="bg-gray-100">
     <section id="topPage"></section>
@@ -116,17 +113,31 @@
         </ul>
     </div>
     
-    
+    <div class="bg-gray-300">
+      <section id="buttonReview" class="container">
+        <div class="max-w-screen-md mx-auto py-8" >
+          <div>
+            <h2>Stripe</h2>
+            <p>
+              Singolo prodotto. Per testare il pagamento usa come carta: 4000002500003155
+              come CVC: 3 cifre qualsiasi, come
+               DATA: Qualsiasi futura. Puoi testare anche una carta scaduta: 4000000000009995
+              <a href="https://stripe.com/docs/testing">Dati</a>
+            </p>
+            <StripeItem :idPrice="'price_1NpvKGBI9AUPHPQbihmB2Zu4'" />
+            <StripeItem :idPrice="'price_1NqDNPBI9AUPHPQbG23kVMQz'" />
+            <!-- <StripeCheckoutButton /> -->
+            
+          </div>
+        </div>
+      </section>
+    </div>
+
 
     <div class="bg-gray-200">
       <section id="buttonReview" class="container">
         <div class="max-w-screen-md mx-auto py-8">
-
-          <div>
-            <PayButtonStripe />
-            <StripeCheckoutButton />
-          </div>
-          
+         
           <div class="mb-6">
             <h2>{{ t('customComponent.component_slide_image') }}</h2>
             <p>
