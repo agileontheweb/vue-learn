@@ -1,53 +1,58 @@
 
-   <template>
-    <div class="border bg-gray-100">
-        <div class="container">  
-            <h2>Carrello</h2>
-            <ul>
-                <li v-for="product in cart" :key="product.id" class="border">
-                {{ product.name }}
-                <!-- - {{ formatPrice(product.price) }} -->
-                <img :src="product.images" alt="Immagine del prodotto" class="w-20   mx-auto"/>
-                </li>
-            </ul>
-            <button class="btn-primary" @click="submit">Pay now!</button>
-        </div>
-        <StripeCheckout
-            ref="checkoutRef"
-            mode="payment"
-            :pk="publishableKey"
-            :line-items="lineItems"
-            :success-url="successURL"
-            :cancel-url="cancelURL"
-            @loading="loading = $event"
-        />
-        
-        <Toast :myprop="message" :showToast="showToast" @closeToast="closeToast" />
-        </div>
+
+
+<template>
+    <div>
+      <div v-for="(product, index) in products" :key="index">
+        <p>{{ product.name }}</p>
+        <p>{{ product.price }}</p>
+        <button @click="addToCart(product)">Aggiungi al carrello</button>
+      </div>
+      <button @click="openStripeCheckout">Paga su Stripe</button>
+    </div>
   </template>
   
-
   <script setup>
-  import cart from '../assets/cartStore.js';
-  // import { StripeCheckout } from '@vue-stripe/vue-stripe'; //rompe route nella navigazione
-  import { ref, onMounted } from 'vue';
-  import { STRIPE_PUBLISHABLE_KEY } from '../apikey';
-  import { STRIPE_SECRET_KEY } from '../apikey';
+import { ref, onMounted } from 'vue';
+import { Stripe } from 'stripe';
+import { STRIPE_SECRET_KEY } from '../apikey';
+import axios from 'axios';
+import { loadStripe } from '@stripe/stripe-js';
+
+  const secretKey = STRIPE_SECRET_KEY;
+  const stripePromise = loadStripe(secretKey);
+
+  const products = ref([
+    {
+      id: 'price_1NqDNPBI9AUPHPQbG23kVMQz',
+      name: 'Prodotto 1',
+      price: 10.00,
+    },
+    {
+      id: 'price_1NpvKGBI9AUPHPQbihmB2Zu4',
+      name: 'Prodotto 2',
+      price: 20.00,
+    },
+  ]);
+
+  const stripe = Stripe(secretKey);
+
+  // Esempio di gestione di un pagamento tramite Axios
+// 
+
   
-const secretKey = STRIPE_SECRET_KEY;
-const selectedItem = ref(null);
-const publishableKey = STRIPE_PUBLISHABLE_KEY;
-const loading = ref(false);
+  onMounted(() => {
+  // Iniziaizza Stripe qui, sostituisci 'YOUR_STRIPE_SECRET_KEY' con la tua chiave segreta
+  const stripe = new Stripe(secretKey);
 
-  const successURL = 'http://localhost:5173/success';
-  const cancelURL = 'http://localhost:5173/cancel';
+    });
 
-  const checkoutRef = ref(null);
-
+  const cart = ref([]);
   
-  const submit = () => {
-  checkoutRef.value.redirectToCheckout();
+  const addToCart = (product) => {
+    cart.value.push(product);
+  }; 
 
-};
 
-</script>
+  </script>
+  
