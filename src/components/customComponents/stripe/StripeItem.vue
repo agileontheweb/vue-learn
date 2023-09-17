@@ -7,6 +7,8 @@
         <p v-if="selectedItem">Descrizione: {{ selectedItem.description }}</p>
         <p v-if="selectedItem">Prezzo: {{ formatPrice(selectedItem.price) }}</p>
         <img v-if="selectedItem" :src="selectedItem.images" alt="Immagine del prodotto" class="max-w-xs  mx-auto"/>
+        
+        <div v-if="isStripeCheckoutActive">
         <StripeCheckout
             ref="checkoutRef"
             mode="payment"
@@ -16,22 +18,23 @@
             :cancel-url="cancelURL"
             @loading="loading = $event"
         />
+        </div>
         <button class="btn-primary" @click="submit">Pay now!</button>
     </div>
   </template>
   
 <script setup>
-//  import { StripeCheckout } from '@vue-stripe/vue-stripe'; //rompe route nella navigazione
+    import { StripeCheckout } from '@vue-stripe/vue-stripe'; //rompe route nella navigazione
   import { ref, onMounted } from 'vue';
-  import { STRIPE_PUBLISHABLE_KEY } from '../../apikey';
-  import { STRIPE_SECRET_KEY } from '../../apikey';
-
+  import { STRIPE_PUBLISHABLE_KEY } from '../../../apikey';
+  import { STRIPE_SECRET_KEY } from '../../../apikey';
+  const isStripeCheckoutActive = ref(false);
   const secretKey = STRIPE_SECRET_KEY;
   const selectedItem = ref(null);
   const publishableKey = STRIPE_PUBLISHABLE_KEY;
   const loading = ref(false);
-const productPrice = ref(0);
-const { idPrice } = defineProps(['idPrice']);
+  const productPrice = ref(0);
+  const { idPrice } = defineProps(['idPrice']);
 
   const formatPrice = (price) => {
     if (!price) return '';
@@ -67,8 +70,6 @@ const { idPrice } = defineProps(['idPrice']);
     } finally {
         loading.value = false;
   }
-
-    
   };
   
   const getPrice = async (priceId) => {
@@ -93,6 +94,7 @@ const { idPrice } = defineProps(['idPrice']);
   };
 
 const submit = () => {
+  isStripeCheckoutActive.value = true;
   checkoutRef.value.redirectToCheckout();
 };
 

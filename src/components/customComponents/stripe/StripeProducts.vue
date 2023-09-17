@@ -19,7 +19,8 @@
     </div>
     <Toast :myprop="message" :showToast="showToast" @closeToast="closeToast" />
   </div>
-  <div>
+  
+  <div v-if="isStripeCheckoutActive">
     <stripe-checkout
       ref="checkoutRef"
       mode="payment"
@@ -34,10 +35,13 @@
 
 <script setup>
 import { ref, onMounted, provide } from 'vue';
-import { StripeCheckout } from '@vue-stripe/vue-stripe';
-import { STRIPE_SECRET_KEY } from '../../apikey';
-import { STRIPE_PUBLISHABLE_KEY } from '../../apikey';
-import Toast from '../../components/customComponents/Toast.vue';
+ import { StripeCheckout } from '@vue-stripe/vue-stripe';
+import { STRIPE_SECRET_KEY } from '../../../apikey';
+import { STRIPE_PUBLISHABLE_KEY } from '../../../apikey';
+import Toast from '../../../components/customComponents/Toast.vue';
+
+const isStripeCheckoutActive = ref(false);
+
 const showToast = ref(false);
 const message = ref('Prodotto aggiunto');
 const checkoutRef = ref(null);
@@ -48,6 +52,7 @@ const successURL = 'http://localhost:5173/success';
 const cancelURL = 'http://localhost:5173/cancel';
 
 const submit = () => {
+  isStripeCheckoutActive.value = true;
   for (const item of lineItems.value) {
     console.log(item.priceId +  " - " + item.quantity);
     
