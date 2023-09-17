@@ -57,21 +57,53 @@
       "h1": "Componenti Custom",
       "description": "Le esercitazioni si bassano sulla realizzazion di alcuni componenti da riutilizzare in più parti dentro al progetto.",
       "listComponents": "Lista di componenti:",
-      "component_slide_image": "Slide Image + Form ",
+      "component_slide_image": {
+        "h2":"Slide Image + Form"
+      },
+
       "component_autocomplete": {
-        "title": "AutoComplete + API + Grafico: Qualità aria",
+        "h2": "AutoComplete + API + Grafico: Qualità aria",
         "p_1": "Inserendo il nome della città viene eseguita una ricerca nel file Json: ",
         "p_2": "Cliccando sulla città viene eseguita una chiamata ad API-Ninja <a href=\"https://api.api-ninjas.com/v1/airquality\">airquality</a> per recuperare i dati",
         "p_3": "Infine viene mostrato il grafico"
 
       },
       "component_quote_api":{
-        "title": "API: Citazioni",
+        "h2": "API: Citazioni",
         "p_1": "Mostra una citazione presa a random via Api da https://api.api-ninjas.com/v1/quotes.",
         "p_2": "Clicca il pulsante per caricare una nuova citazione"
       } ,
-      "component_buttons_cart": "Pulsanti + Carrello",
-      "component_crud": "Crud",
+      
+      "component_buttons_cart": {
+        "h2":"Pulsanti + Carrello",
+        "p_1":"Passo parametri prodotto + Mostra Toast + Mostra Top Alert",
+        "h3":"Sezione Carrello:",
+        "p_2":"Mostro i prodotti aggiunti tramite i pulsanti qui sopra.",
+        "total_product": "Prodotti totale nel carrello",
+        "produtcs":{
+          "shooes":"Scarpe",
+          "tshirt":"Maglietta",
+          "pants":"Pantaloni"
+        }
+      },
+
+      "component_crud": {
+        "h2":"Crud + Firebase",
+        "p_1":"Aggiungi,Modifica, Rimuovi Item.",
+        "no_items": "Nessun Professore? Aggiungine uno.",
+        "placeholder": "Aggiungi il nome di un professore.",
+        "buttons":{
+          "add":"Aggiungi prodessore",
+          "remove":"Rimuovi",
+          "modify":"Modifica",
+          "save":"Salva"
+        }
+      },
+
+      "component_stripe": {
+        "h2":"Pagamento Stripe",
+        "p_1":"Singolo prodotto. Per testare il pagamento usa come carta: 4000002500003155 come CVC: 3 cifre qualsiasi, come DATA: Qualsiasi futura. Puoi testare anche una carta scaduta: 4000000000009995"
+      },
       "slideImage":{
         "p_1": "In questo componente passo i parametri: Titolo, descrizione e un array di immagini.",
         "p_2": "Dentro al componente Card ci sono altri 2 componenti: SquareItem e Carousel",

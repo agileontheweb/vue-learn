@@ -20,7 +20,7 @@
     }
     
     footer a {
-        @apply border-none hover:text-green-500;
+        @apply hover:text-green-500;
     }
 
     .btn-active{

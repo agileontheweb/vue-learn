@@ -1,9 +1,9 @@
 <template>
   <div>        
-    <div v-if="cartItems.length === 0">Il carrello è vuoto.</div>
+    <div class="border bg-red-100 text-red-800 border-red-500 rounded-lg p-3" v-if="cartItems.length === 0">Il carrello è vuoto.</div>
     <div v-else>
       <p>
-        <strong>Total Products in the cart: <span class="text-2xl text-green-500">
+        <strong>{{ t('customComponent.component_buttons_cart.total_product') }} <span class="text-2xl text-green-500">
           {{ totalItemCart }}</span>
         </strong>
       </p>
@@ -35,8 +35,9 @@
 <script setup>
   import { ref, watch, defineProps, defineEmits } from 'vue';
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-  import Buttons from './Buttons.vue';
-  
+  // import Buttons from './Buttons.vue';
+  import { useI18n } from 'vue-i18n';
+  const { t } = useI18n();
   const props = defineProps({
     quantity: Number,
     cartItems: Array,

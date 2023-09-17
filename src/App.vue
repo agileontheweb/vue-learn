@@ -5,8 +5,8 @@ import Navigation from './components/Navigation.vue'
 import Footer from './components/Footer.vue'
 import FontAwesomeConfig from './components/FontAwesomeConfig.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import App from './App.vue';
-import { createApp } from 'vue';
+// import App from './App.vue';
+// import { createApp } from 'vue';
 </script>
 
 <template>

@@ -40,13 +40,31 @@ const changeLanguage = (newLocale) => {
 };
 
 const myFace = ref(null);
-  onMounted(() => {
+
+onMounted(() => {
+  
     gsap.from(myFace.value, {
       opacity: 0,
       duration: 3,
       ease: 'power2.out',
     });
     
+    gsap.set(".logo-vue", {
+      y: 0,
+      opacity:0
+    });
+    
+    gsap.to(".logo-vue", { 
+      rotationY: 360,
+      ease: "circ.out",
+      duration: 5,
+      opacity: 1,
+      // repeat: -1,
+      repeatDelay: 0 
+    })
+
+
+
     gsap.set("nav ul li", {
       y: 100,
       opacity:0
@@ -71,7 +89,10 @@ const myFace = ref(null);
       <div class="text-3xl uppercase my-6 font-semibold ">
         {{ t('Custom.brand') }}
       </div>
-      <font-awesome-icon :icon="['fab', 'vuejs']" class="text-green-600 text-4xl mt-3" />
+      <font-awesome-icon
+      ref="logoVue"
+      :icon="['fab', 'vuejs']"
+      class="text-green-600 text-4xl mt-3 logo-vue" />
     <nav>    
       <div class="inline-block h-10 px-3 justify-center py-2 mt-4 border-green-100/30 border rounded-full ">
         <button
@@ -105,9 +126,6 @@ const myFace = ref(null);
         <li
             :class="{ 'btn-active': $route.path === '/about' }">
             <RouterLink :to="{ name: 'about' }">{{ t('Nav.about') }}</RouterLink>
-        </li>
-        <li>
-          <a href="https://github.com/agileontheweb/vue-learn/" target="_blank" rel="noopener">Github</a>
         </li>
     </ul>
     </nav>
