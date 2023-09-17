@@ -19,7 +19,23 @@ const router = createRouter({
       path: '/customComponents',
       name: 'customComponents',
       component: () => import('../views/customComponentsView.vue')
+    },
+    {
+      path: '/success',
+      name: 'success',
+      component: () => import('../views/SuccessView.vue')
+    },
+    {
+      path: '/cancel',
+      name: 'cancel',
+      component: () => import('../views/CancelView.vue')
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: () => import('../views/CartView.vue')
     }
+    
   ]
 })
 

@@ -1,31 +1,28 @@
 <template>
     <div>
       <div v-if="teachers.length === 0" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-        <span class="block sm:inline">No teachers? If you want a new teacher add one.</span>
-        <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-          <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
-        </span>
+        <span class="block sm:inline">{{ t('customComponent.component_crud.no_items') }}</span>
       </div>
       <div class="my-6">
-        <button class="btn-primary" @click="openAddTeacherForm">Add Teacher</button>
+        <button class="btn-primary" @click="openAddTeacherForm">{{ t('customComponent.component_crud.buttons.add') }}</button>
        </div>
        <form v-if="showAddTeacherForm" class="border flex" @submit.prevent="saveTeacher">
           <input 
             ref="inputFieldAdd"
             v-model="newTeacherName"
-            placeholder="Add teacher name"
+            :placeholder="t('customComponent.component_crud.placeholder')"
             class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             required>
 
-          <button type="submit" class="mx-3 btn-primary">Save</button>
+          <button type="submit" class="mx-3 btn-primary">{{ t('customComponent.component_crud.buttons.save') }}</button>
         </form>
         <ul class="list-none">
         <li v-for="(teacher, key) in teachers" :key="key">
           <div class="flex p-6 bg-white">
               <div>
-                  <p>KEY: {{ key }}</p>
-                  <p>ID: {{ teacher.id }}</p>
-                  <p v-if="!teacher.editing">NAME: {{ teacher.name }}</p>
+                  <p>Key: {{ key }}</p>
+                  <p>Id: {{ teacher.id }}</p>
+                  <p v-if="!teacher.editing">Name: {{ teacher.name }}</p>
                   <input 
                   :ref="`inputFieldEdit-${teacher.id}`"
                   v-model="teacher.updatedName"
@@ -33,9 +30,9 @@
                   class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
               </div>
               <div>
-                  <button class="mx-3 btn-primary" @click="editTeacher(teacher)">Modifica</button>
-                  <button v-if="teacher.editing" class="mx-3 btn-primary" @click="saveEditedTeacher(teacher)">Salva</button>
-                  <button class="mx-3 btn-remove" @click="deleteTeacher(teacher.id)">Rimuovi</button>
+                  <button class="mx-3 btn-primary" @click="editTeacher(teacher)">{{ t('customComponent.component_crud.buttons.modify') }}</button>
+                  <button v-if="teacher.editing" class="mx-3 btn-primary" @click="saveEditedTeacher(teacher)">{{ t('customComponent.component_crud.buttons.save') }}</button>
+                  <button class="mx-3 btn-remove" @click="deleteTeacher(teacher.id)">{{ t('customComponent.component_crud.buttons.remove') }}</button>
               </div>
           </div>
         </li>
@@ -47,9 +44,10 @@
   import { ref, onMounted, nextTick } from 'vue';
   import { getDatabase, ref as dbRef, get, remove, push, update } from 'firebase/database';
   import { firestore } from '../../firebase'; // Importa "firestore" da firebase.js
-  
+  import { useI18n } from 'vue-i18n';
   const teachers = ref([]);
   const database = getDatabase(firestore);
+  const { t } = useI18n();
 
 
   const inputFieldAdd = ref(null); 
@@ -141,7 +139,6 @@ const saveEditedTeacher = async (teacher) => {
   }
 };
 
-
 const showAddTeacherForm = ref(false);
 const newTeacherName = ref('');
 
@@ -165,6 +162,5 @@ const saveTeacher = async () => {
     console.error('Error to add Teacher:', error);
   }
 };
-
   </script>
   
